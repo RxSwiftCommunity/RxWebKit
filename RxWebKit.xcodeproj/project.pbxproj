@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B67D57A3982E813FC0225EE /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4883E019D315D93F5CB40AF /* Pods_Example.framework */; };
+		424205821C89E99500214DA1 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
+		424205851C89E9DF00214DA1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
+		424205861C89E9DF00214DA1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
 		42F426B51C66223E001FED46 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42F426AC1C66223E001FED46 /* Info.plist */; };
 		42F426B61C66223E001FED46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426AD1C66223E001FED46 /* AppDelegate.swift */; };
 		42F426B71C66223E001FED46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F426AE1C66223E001FED46 /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		39BE830FB8EE9152B3EE144F /* Pods_RxWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4242057A1C89E95100214DA1 /* RxWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		424205831C89E9DF00214DA1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		424205841C89E9DF00214DA1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		42F426971C66200D001FED46 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F426AC1C66223E001FED46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F426AD1C66223E001FED46 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		424205761C89E95100214DA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424205851C89E9DF00214DA1 /* RxSwift.framework in Frameworks */,
+				424205861C89E9DF00214DA1 /* RxCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42F426941C66200D001FED46 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,6 +125,7 @@
 			children = (
 				42F426971C66200D001FED46 /* Example.app */,
 				42F426CE1C6623C5001FED46 /* RxWebKit.framework */,
+				4242057A1C89E95100214DA1 /* RxWebKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +175,8 @@
 		733B51F3D0F2B4B1E9A99FDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				424205831C89E9DF00214DA1 /* RxSwift.framework */,
+				424205841C89E9DF00214DA1 /* RxCocoa.framework */,
 				D4883E019D315D93F5CB40AF /* Pods_Example.framework */,
 				39BE830FB8EE9152B3EE144F /* Pods_RxWebKit.framework */,
 			);
@@ -168,6 +186,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		424205771C89E95100214DA1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42F426CB1C6623C5001FED46 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +204,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		424205791C89E95100214DA1 /* RxWebKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 424205811C89E95100214DA1 /* Build configuration list for PBXNativeTarget "RxWebKit-iOS" */;
+			buildPhases = (
+				424205751C89E95100214DA1 /* Sources */,
+				424205761C89E95100214DA1 /* Frameworks */,
+				424205771C89E95100214DA1 /* Headers */,
+				424205781C89E95100214DA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxWebKit-iOS";
+			productName = "RxWebKit-iOS";
+			productReference = 4242057A1C89E95100214DA1 /* RxWebKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		42F426961C66200D001FED46 /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42F426A91C66200D001FED46 /* Build configuration list for PBXNativeTarget "Example" */;
@@ -231,6 +274,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = MokuMokuCloud;
 				TargetAttributes = {
+					424205791C89E95100214DA1 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					42F426961C66200D001FED46 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -254,11 +300,19 @@
 			targets = (
 				42F426961C66200D001FED46 /* Example */,
 				42F426CD1C6623C5001FED46 /* RxWebKit */,
+				424205791C89E95100214DA1 /* RxWebKit-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		424205781C89E95100214DA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42F426951C66200D001FED46 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +412,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		424205751C89E95100214DA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424205821C89E99500214DA1 /* Rx+WebKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42F426931C66200D001FED46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +469,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4242057F1C89E95100214DA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/RxWebKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.RxWebKit;
+				PRODUCT_NAME = RxWebKit;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		424205801C89E95100214DA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/RxWebKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.RxWebKit;
+				PRODUCT_NAME = RxWebKit;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		42F426A71C66200D001FED46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -495,6 +607,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,6 +622,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,6 +641,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Example/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.RxWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,6 +665,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Example/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.RxWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,6 +679,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		424205811C89E95100214DA1 /* Build configuration list for PBXNativeTarget "RxWebKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4242057F1C89E95100214DA1 /* Debug */,
+				424205801C89E95100214DA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42F426921C66200D001FED46 /* Build configuration list for PBXProject "RxWebKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
