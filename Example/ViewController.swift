@@ -24,21 +24,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(wkWebView)
-        let request = NSURLRequest(URL: NSURL(string: "https://github.com/ReactiveX/RxSwift")!)
-        wkWebView.loadRequest(request)
+        let request = URLRequest(url: URL(string: "https://github.com/ReactiveX/RxSwift")!)
+        wkWebView.load(request)
 
-        observeReadOnlyProperties(wkWebView)
+        observeReadOnlyProperties(wkWebView: wkWebView)
         observeToolBarButtonItems()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let originY = CGRectGetMaxY(UIApplication.sharedApplication().statusBarFrame)
+        let originY = UIApplication.shared().statusBarFrame.maxY
         wkWebView.frame = CGRect(
             x: 0,
             y: originY,
             width: self.view.bounds.width,
-            height: CGRectGetMinY(toolBar.frame) - originY
+            height: toolBar.frame.minY - originY
         )
     }
 
@@ -79,14 +79,14 @@ class ViewController: UIViewController {
         wkWebView.rx_canGoBack
             .shareReplay(1)
             .subscribeNext { [weak self] in
-                self?.backButton.enabled = $0
+                self?.backButton.isEnabled = $0
             }
             .addDisposableTo(disposeBag)
 
         wkWebView.rx_canGoForward
             .shareReplay(1)
             .subscribeNext { [weak self] in
-                self?.forwardButton.enabled = $0
+                self?.forwardButton.isEnabled = $0
             }
             .addDisposableTo(disposeBag)
     }
@@ -95,14 +95,14 @@ class ViewController: UIViewController {
         backButton.rx_tap
             .shareReplay(1)
             .subscribeNext { [weak self] in
-                self?.wkWebView.goBack()
+                _ = self?.wkWebView.goBack()
             }
             .addDisposableTo(disposeBag)
 
         forwardButton.rx_tap
             .shareReplay(1)
             .subscribeNext { [weak self] in
-                self?.wkWebView.goForward()
+                _ = self?.wkWebView.goForward()
             }
             .addDisposableTo(disposeBag)
     }
