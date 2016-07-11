@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             }
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_URL
+        wkWebView.rx_url
             .shareReplay(1)
             .subscribeNext {
                 print("URL: \($0)")

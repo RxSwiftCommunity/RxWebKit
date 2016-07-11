@@ -38,10 +38,10 @@ extension WKWebView {
     }
 
     /**
-     Reactive wrapper for `URL` property.
+     Reactive wrapper for `url` property.
     */
-    public var rx_URL: Observable<NSURL?> {
-        return self.rx_observe(NSURL.self, "URL")
+    public var rx_url: Observable<URL?> {
+        return self.rx_observe(URL.self, "url")
     }
 
     /**
