@@ -41,7 +41,7 @@ extension WKWebView {
      Reactive wrapper for `url` property.
     */
     public var rx_url: Observable<URL?> {
-        return self.rx_observe(URL.self, "url")
+        return self.rx_observe(URL.self, "URL")
     }
 
     /**

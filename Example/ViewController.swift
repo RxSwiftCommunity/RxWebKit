@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let originY = UIApplication.shared().statusBarFrame.maxY
+        let originY = UIApplication.shared.statusBarFrame.maxY
         wkWebView.frame = CGRect(
             x: 0,
             y: originY,
