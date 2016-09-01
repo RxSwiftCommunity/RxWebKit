@@ -48,42 +48,42 @@ class ViewController: UIViewController {
     }
 
     private func observeReadOnlyProperties(wkWebView: WKWebView) {
-        wkWebView.rx_title
+        wkWebView.rx.title
             .shareReplay(1)
             .subscribe(onNext: {
                 print("title: \($0)")
             })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_url
+        wkWebView.rx.url
             .shareReplay(1)
             .subscribe(onNext: {
                 print("URL: \($0)")
             })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_estimatedProgress
+        wkWebView.rx.estimatedProgress
             .shareReplay(1)
             .subscribe(onNext: {
                 print("estimatedProgress: \($0)")
             })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_loading
+        wkWebView.rx.loading
             .shareReplay(1)
             .subscribe(onNext: {
                 print("loading: \($0)")
             })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_canGoBack
+        wkWebView.rx.canGoBack
             .shareReplay(1)
             .subscribe(onNext: { [weak self] in
                 self?.backButton.isEnabled = $0
             })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_canGoForward
+        wkWebView.rx.canGoForward
             .shareReplay(1)
             .subscribe(onNext: { [weak self] in
                 self?.forwardButton.isEnabled = $0
