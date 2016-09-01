@@ -10,15 +10,11 @@ post_install do |installer|
 end
 
 target 'RxWebKit' do
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch =>
-  'swift-3.0'
-  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch =>
-  'swift-3.0'
+  pod 'RxSwift',    '~> 3.0.0.alpha.1'
+  pod 'RxCocoa',    '~> 3.0.0.alpha.1'
 end
 
 target 'Example' do
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch =>
-  'swift-3.0'
-  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch =>
-  'swift-3.0'
+  pod 'RxSwift',    '~> 3.0.0.alpha.1'
+  pod 'RxCocoa',    '~> 3.0.0.alpha.1'
 end

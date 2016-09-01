@@ -18,14 +18,14 @@ extension WKWebView {
      Reactive wrapper for `title` property
      */
     public var rx_title: Observable<String?> {
-        return self.rx_observe(String.self, "title")
+        return self.rx.observe(String.self, "title")
     }
 
     /**
      Reactive wrapper for `loading` property.
     */
     public var rx_loading: Observable<Bool> {
-        return self.rx_observe(Bool.self, "loading")
+        return self.rx.observe(Bool.self, "loading")
             .map { $0 ?? false }
     }
 
@@ -33,7 +33,7 @@ extension WKWebView {
      Reactive wrapper for `estimatedProgress` property.
     */
     public var rx_estimatedProgress: Observable<Double> {
-        return self.rx_observe(Double.self, "estimatedProgress")
+        return self.rx.observe(Double.self, "estimatedProgress")
             .map { $0 ?? 0.0 }
     }
 
@@ -41,14 +41,14 @@ extension WKWebView {
      Reactive wrapper for `url` property.
     */
     public var rx_url: Observable<URL?> {
-        return self.rx_observe(URL.self, "URL")
+        return self.rx.observe(URL.self, "URL")
     }
 
     /**
      Reactive wrapper for `canGoBack` property.
     */
     public var rx_canGoBack: Observable<Bool> {
-        return self.rx_observe(Bool.self, "canGoBack")
+        return self.rx.observe(Bool.self, "canGoBack")
             .map { $0 ?? false }
     }
 
@@ -56,7 +56,7 @@ extension WKWebView {
      Reactive wrapper for `canGoForward` property.
     */
     public var rx_canGoForward: Observable<Bool> {
-        return self.rx_observe(Bool.self, "canGoForward")
+        return self.rx.observe(Bool.self, "canGoForward")
             .map { $0 ?? false }
     }
 }
