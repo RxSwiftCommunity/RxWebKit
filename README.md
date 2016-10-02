@@ -18,16 +18,16 @@ self.view.addSubview(webView)
 
 // MARK: Observing properties
 
-webView.rx_title
-    .subscribeNext {
+webView.rx.title
+    .subscribe(onNext: {
         print("title: \($0)")
-    }
+    })
     .addDisposableTo(disposeBag)
 
-webView.rx_URL
-    .subscribeNext {
+webView.rx.url
+    .subscribe(onNext: {
         print("URL: \($0)")
-    }
+    })
     .addDisposableTo(disposeBag)
 ```
 
@@ -59,7 +59,7 @@ $(SRCROOT)/carthage/Build/iOS/RxWebKit.framework
 
 ## Requirements
 
-RxWebKit requires Swift 2.1 and dedicated versions of RxSwift 2.1
+RxWebKit requires Swift 3.0 and dedicated versions of RxSwift 3.0.0-beta.1
 
 ## License
 
