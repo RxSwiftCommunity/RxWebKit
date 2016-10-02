@@ -13,50 +13,51 @@ import WebKit
     import RxCocoa
 #endif
 
-extension WKWebView {
+extension Reactive where Base: WKWebView {
     /**
      Reactive wrapper for `title` property
      */
-    public var rx_title: Observable<String?> {
-        return self.rx_observe(String.self, "title")
+    public var title: Observable<String?> {
+        return self.observe(String.self, "title")
     }
 
     /**
      Reactive wrapper for `loading` property.
-    */
-    public var rx_loading: Observable<Bool> {
-        return self.rx_observe(Bool.self, "loading")
+     */
+    public var loading: Observable<Bool> {
+        return self.observe(Bool.self, "loading")
             .map { $0 ?? false }
     }
 
     /**
      Reactive wrapper for `estimatedProgress` property.
-    */
-    public var rx_estimatedProgress: Observable<Double> {
-        return self.rx_observe(Double.self, "estimatedProgress")
+     */
+    public var estimatedProgress: Observable<Double> {
+        return self.observe(Double.self, "estimatedProgress")
             .map { $0 ?? 0.0 }
     }
 
     /**
-     Reactive wrapper for `URL` property.
-    */
-    public var rx_URL: Observable<NSURL?> {
-        return self.rx_observe(NSURL.self, "URL")
+     Reactive wrapper for `url` property.
+     */
+    public var url: Observable<URL?> {
+        return self.observe(URL.self, "URL")
     }
+
 
     /**
      Reactive wrapper for `canGoBack` property.
-    */
-    public var rx_canGoBack: Observable<Bool> {
-        return self.rx_observe(Bool.self, "canGoBack")
+     */
+    public var canGoBack: Observable<Bool> {
+        return self.observe(Bool.self, "canGoBack")
             .map { $0 ?? false }
     }
 
     /**
      Reactive wrapper for `canGoForward` property.
-    */
-    public var rx_canGoForward: Observable<Bool> {
-        return self.rx_observe(Bool.self, "canGoForward")
+     */
+    public var canGoForward: Observable<Bool> {
+        return self.observe(Bool.self, "canGoForward")
             .map { $0 ?? false }
     }
 }

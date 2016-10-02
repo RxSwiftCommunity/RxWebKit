@@ -24,21 +24,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(wkWebView)
-        let request = NSURLRequest(URL: NSURL(string: "https://github.com/ReactiveX/RxSwift")!)
-        wkWebView.loadRequest(request)
+        let request = URLRequest(url: URL(string: "https://github.com/ReactiveX/RxSwift")!)
+        wkWebView.load(request)
 
-        observeReadOnlyProperties(wkWebView)
+        observeReadOnlyProperties(wkWebView: wkWebView)
         observeToolBarButtonItems()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let originY = CGRectGetMaxY(UIApplication.sharedApplication().statusBarFrame)
+        let originY = UIApplication.shared.statusBarFrame.maxY
         wkWebView.frame = CGRect(
             x: 0,
             y: originY,
             width: self.view.bounds.width,
-            height: CGRectGetMinY(toolBar.frame) - originY
+            height: toolBar.frame.minY - originY
         )
     }
 
@@ -48,62 +48,62 @@ class ViewController: UIViewController {
     }
 
     private func observeReadOnlyProperties(wkWebView: WKWebView) {
-        wkWebView.rx_title
+        wkWebView.rx.title
             .shareReplay(1)
-            .subscribeNext {
+            .subscribe(onNext: {
                 print("title: \($0)")
-            }
+            })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_URL
+        wkWebView.rx.url
             .shareReplay(1)
-            .subscribeNext {
+            .subscribe(onNext: {
                 print("URL: \($0)")
-            }
+            })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_estimatedProgress
+        wkWebView.rx.estimatedProgress
             .shareReplay(1)
-            .subscribeNext {
+            .subscribe(onNext: {
                 print("estimatedProgress: \($0)")
-            }
+            })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_loading
+        wkWebView.rx.loading
             .shareReplay(1)
-            .subscribeNext {
+            .subscribe(onNext: {
                 print("loading: \($0)")
-            }
+            })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_canGoBack
+        wkWebView.rx.canGoBack
             .shareReplay(1)
-            .subscribeNext { [weak self] in
-                self?.backButton.enabled = $0
-            }
+            .subscribe(onNext: { [weak self] in
+                self?.backButton.isEnabled = $0
+            })
             .addDisposableTo(disposeBag)
 
-        wkWebView.rx_canGoForward
+        wkWebView.rx.canGoForward
             .shareReplay(1)
-            .subscribeNext { [weak self] in
-                self?.forwardButton.enabled = $0
-            }
+            .subscribe(onNext: { [weak self] in
+                self?.forwardButton.isEnabled = $0
+            })
             .addDisposableTo(disposeBag)
     }
     
     private func observeToolBarButtonItems() {
-        backButton.rx_tap
+        backButton.rx.tap
             .shareReplay(1)
-            .subscribeNext { [weak self] in
-                self?.wkWebView.goBack()
-            }
+            .subscribe(onNext: { [weak self] in
+                _ = self?.wkWebView.goBack()
+            })
             .addDisposableTo(disposeBag)
 
-        forwardButton.rx_tap
+        forwardButton.rx.tap
             .shareReplay(1)
-            .subscribeNext { [weak self] in
-                self?.wkWebView.goForward()
-            }
+            .subscribe(onNext: { [weak self] in
+                _ = self?.wkWebView.goForward()
+            })
             .addDisposableTo(disposeBag)
     }
 
