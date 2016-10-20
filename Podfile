@@ -10,11 +10,11 @@ post_install do |installer|
 end
 
 target 'RxWebKit' do
-  pod 'RxSwift',    '~> 3.0.0-beta.2'
-  pod 'RxCocoa',    '~> 3.0.0-beta.2'
+  pod 'RxSwift',    '~> 3.0.0-rc.1'
+  pod 'RxCocoa',    '~> 3.0.0-rc.1'
 end
 
 target 'Example' do
-  pod 'RxSwift',    '~> 3.0.0-beta.2'
-  pod 'RxCocoa',    '~> 3.0.0-beta.2'
+  pod 'RxSwift',    '~> 3.0.0-rc.1'
+  pod 'RxCocoa',    '~> 3.0.0-rc.1'
 end
