@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxWebKit"
-  s.version      = "0.3.3"
+  s.version      = "0.3.4"
   s.summary      = "RxWebKit is a RxSwift wrapper for WebKit."
   s.description  = <<-DESC
   RxWebKit is a RxSwift wrapper for `WebKit`.
