@@ -21,6 +21,7 @@
 		42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
 		6B616B2F285CDDC880DAB26F /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */; };
+		704CC1631F4AD47400DDFEAF /* WKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CC1621F4AD47400DDFEAF /* WKNavigationDelegateProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+WebKit.swift"; sourceTree = "<group>"; };
 		46FB3C90F3D7D4416B825C36 /* Pods_RxWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		494317696D9F726E88C1D1C9 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		704CC1621F4AD47400DDFEAF /* WKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		A06BE07DD958EBAC83F7BA53 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		AA7B81072D217E470FE2C4C9 /* Pods-RxWebKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxWebKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxWebKit/Pods-RxWebKit.release.xcconfig"; sourceTree = "<group>"; };
 		E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 		42B12EFB1C6DFC7600C280BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				704CC1611F4AD45200DDFEAF /* Proxies */,
 				42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */,
 			);
 			path = Sources;
@@ -169,6 +172,14 @@
 				42F426D01C6623C5001FED46 /* RxWebKit.h */,
 			);
 			path = RxWebKit;
+			sourceTree = "<group>";
+		};
+		704CC1611F4AD45200DDFEAF /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+				704CC1621F4AD47400DDFEAF /* WKNavigationDelegateProxy.swift */,
+			);
+			path = Proxies;
 			sourceTree = "<group>";
 		};
 		733B51F3D0F2B4B1E9A99FDC /* Frameworks */ = {
@@ -440,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */,
+				704CC1631F4AD47400DDFEAF /* WKNavigationDelegateProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
