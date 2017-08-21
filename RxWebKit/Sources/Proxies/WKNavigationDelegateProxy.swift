@@ -55,14 +55,14 @@ public class WKNavigationDelegateProxy: DelegateProxy, WKNavigationDelegate, Del
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        return (_requiredMethodsDelegate ?? defaultNavigationDelegate).webView!(webView, decidePolicyFor: navigationAction, decisionHandler: decisionHandler)
+        (_requiredMethodsDelegate ?? defaultNavigationDelegate).webView?(webView, decidePolicyFor: navigationAction, decisionHandler: decisionHandler)
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        return (_requiredMethodsDelegate ?? defaultNavigationDelegate).webView!(webView, decidePolicyFor: navigationResponse, decisionHandler: decisionHandler)
+        (_requiredMethodsDelegate ?? defaultNavigationDelegate).webView?(webView, decidePolicyFor: navigationResponse, decisionHandler: decisionHandler)
     }
     
     public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        return (_requiredMethodsDelegate ?? defaultNavigationDelegate).webView!(webView, didReceive: challenge, completionHandler: completionHandler)
+        (_requiredMethodsDelegate ?? defaultNavigationDelegate).webView?(webView, didReceive: challenge, completionHandler: completionHandler)
     }
 }
