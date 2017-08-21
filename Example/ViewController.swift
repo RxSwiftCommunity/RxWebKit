@@ -29,6 +29,11 @@ class ViewController: UIViewController {
 
         observeReadOnlyProperties(wkWebView: wkWebView)
         observeToolBarButtonItems()
+        
+        wkWebView.rx.didStartProvisionalNavigation.subscribe(onNext: { _ in
+            print("Something")
+        })
+        .addDisposableTo(disposeBag)
     }
     
     override func viewDidLayoutSubviews() {
