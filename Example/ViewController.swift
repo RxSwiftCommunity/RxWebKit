@@ -51,44 +51,44 @@ class ViewController: UIViewController {
         wkWebView.rx.title
             .shareReplay(1)
             .subscribe(onNext: {
-                print("title: \($0)")
+                print("title: \(String(describing: $0))")
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         wkWebView.rx.url
             .shareReplay(1)
             .subscribe(onNext: {
-                print("URL: \($0)")
+                print("URL: \(String(describing: $0))")
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         wkWebView.rx.estimatedProgress
             .shareReplay(1)
             .subscribe(onNext: {
                 print("estimatedProgress: \($0)")
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         wkWebView.rx.loading
             .shareReplay(1)
             .subscribe(onNext: {
                 print("loading: \($0)")
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         wkWebView.rx.canGoBack
             .shareReplay(1)
             .subscribe(onNext: { [weak self] in
                 self?.backButton.isEnabled = $0
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         wkWebView.rx.canGoForward
             .shareReplay(1)
             .subscribe(onNext: { [weak self] in
                 self?.forwardButton.isEnabled = $0
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
     
     private func observeToolBarButtonItems() {
@@ -97,14 +97,14 @@ class ViewController: UIViewController {
             .subscribe(onNext: { [weak self] in
                 _ = self?.wkWebView.goBack()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         forwardButton.rx.tap
             .shareReplay(1)
             .subscribe(onNext: { [weak self] in
                 _ = self?.wkWebView.goForward()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
 }
