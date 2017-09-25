@@ -61,3 +61,24 @@ extension Reactive where Base: WKWebView {
             .map { $0 ?? false }
     }
 }
+
+extension WKWebView {
+    public func createWKNavigationDelegateProxy() -> WKNavigationDelegateProxy {
+        return WKNavigationDelegateProxy(parentObject: self)
+    }
+}
+
+extension Reactive where Base: WKWebView {
+    public var navigationDelegate: DelegateProxy {
+        return WKNavigationDelegateProxy.proxyForObject(base)
+    }
+    
+    public func setNavigationDelegate(_ navigationDelegate: WKNavigationDelegate) -> Disposable {
+        return WKNavigationDelegateProxy.installForwardDelegate(navigationDelegate, retainDelegate: false, onProxyForObject: base)
+    }
+    
+    public var didStartProvisionalNavigation: Observable<[Any]> {
+        return navigationDelegate
+            .methodInvoked(#selector(WKNavigationDelegate.webView(_:didStartProvisionalNavigation:)))
+    }
+}
