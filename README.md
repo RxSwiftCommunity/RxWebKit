@@ -22,13 +22,13 @@ webView.rx.title
     .subscribe(onNext: {
         print("title: \($0)")
     })
-    .addDisposableTo(disposeBag)
+    .disposed(by: disposeBag)
 
 webView.rx.url
     .subscribe(onNext: {
         print("URL: \($0)")
     })
-    .addDisposableTo(disposeBag)
+    .disposed(by: disposeBag)
 ```
 
 ## Installation

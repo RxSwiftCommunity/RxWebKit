@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxWebKit"
-  s.version      = "0.3.4"
+  s.version      = "0.3.5"
   s.summary      = "RxWebKit is a RxSwift wrapper for WebKit."
   s.description  = <<-DESC
   RxWebKit is a RxSwift wrapper for `WebKit`.
@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
       .subscribe(onNext: {
           print("title: \($0)")
       })
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
 
   webView.rx.url
       .subscribe(onNext: {
           print("URL: \($0)")
       })
-      .addDisposableTo(disposeBag)
+      .disposed(by: disposeBag)
   ```
                    DESC
 
