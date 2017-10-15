@@ -2,7 +2,7 @@ PODS:
   - RxCocoa (4.0.0-rc.0):
     - RxSwift (~> 4.0.0-rc.0)
   - RxSwift (4.0.0-rc.0)
-  - RxWebKit (1.0.0-rc.0):
+  - RxWebKit (0.4.0):
     - RxCocoa (~> 4.0.0-rc.0)
     - RxSwift (~> 4.0.0-rc.0)
 
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   RxCocoa: 62457355be73369670fbdf053a79a491552b64ed
   RxSwift: 1dd09ceb11531c39adff4efe23556b1484e16967
-  RxWebKit: cb1d69c37fdcbeddc34de68f5c21d2b7c2cae25c
+  RxWebKit: 350965c27f49d4bc793b5353cbed73e209f66b1d
 
 PODFILE CHECKSUM: 63131172300f43e85c8569c549e62d49a780edfd
 
