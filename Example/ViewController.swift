@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         observeReadOnlyProperties(wkWebView: wkWebView)
         observeToolBarButtonItems()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let originY = UIApplication.shared.statusBarFrame.maxY
@@ -49,58 +49,58 @@ class ViewController: UIViewController {
 
     private func observeReadOnlyProperties(wkWebView: WKWebView) {
         wkWebView.rx.title
-            .shareReplay(1)
+            .share(replay: 1)
             .subscribe(onNext: {
                 print("title: \(String(describing: $0))")
             })
             .disposed(by: disposeBag)
 
         wkWebView.rx.url
-            .shareReplay(1)
+            .share(replay: 1)
             .subscribe(onNext: {
                 print("URL: \(String(describing: $0))")
             })
             .disposed(by: disposeBag)
 
         wkWebView.rx.estimatedProgress
-            .shareReplay(1)
+            .share(replay: 1)
             .subscribe(onNext: {
                 print("estimatedProgress: \($0)")
             })
             .disposed(by: disposeBag)
 
-        wkWebView.rx.loading
-            .shareReplay(1)
+        wkWebView.rx.isLoading
+            .share(replay: 1)
             .subscribe(onNext: {
                 print("loading: \($0)")
             })
             .disposed(by: disposeBag)
 
         wkWebView.rx.canGoBack
-            .shareReplay(1)
+            .share(replay: 1)
             .subscribe(onNext: { [weak self] in
                 self?.backButton.isEnabled = $0
             })
             .disposed(by: disposeBag)
 
         wkWebView.rx.canGoForward
-            .shareReplay(1)
+            .share(replay: 1)
             .subscribe(onNext: { [weak self] in
                 self?.forwardButton.isEnabled = $0
             })
             .disposed(by: disposeBag)
     }
-    
+
     private func observeToolBarButtonItems() {
         backButton.rx.tap
-            .shareReplay(1)
+            .share(replay: 1)
             .subscribe(onNext: { [weak self] in
                 _ = self?.wkWebView.goBack()
             })
             .disposed(by: disposeBag)
 
         forwardButton.rx.tap
-            .shareReplay(1)
+            .share(replay: 1)
             .subscribe(onNext: { [weak self] in
                 _ = self?.wkWebView.goForward()
             })
