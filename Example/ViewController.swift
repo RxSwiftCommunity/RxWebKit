@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         observeReadOnlyProperties(wkWebView: wkWebView)
         observeToolBarButtonItems()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let originY = UIApplication.shared.statusBarFrame.maxY
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
-    
+
     private func observeToolBarButtonItems() {
         backButton.rx.tap
             .shareReplay(1)
