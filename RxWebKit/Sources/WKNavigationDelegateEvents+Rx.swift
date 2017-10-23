@@ -31,8 +31,8 @@ extension Reactive where Base: WKWebView {
     
     /// ChallengeHandler this is exposed to the user on subscription
     public typealias ChallengeHandler = (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
-    /// WKChallengeEvent emits a tuple event of WKWebView + challenge + ChallengeHandler
-    public typealias WKChallengeEvent = (webView: WKWebView, challenge: URLAuthenticationChallenge, handler: ChallengeHandler)
+    /// WKNavigationChallengeEvent emits a tuple event of WKWebView + challenge + ChallengeHandler
+    public typealias WKNavigationChallengeEvent = (webView: WKWebView, challenge: URLAuthenticationChallenge, handler: ChallengeHandler)
     
     private func navigationEventWith(_ arg: [Any]) throws -> WKNavigationEvent {
         let view = try castOrThrow(WKWebView.self, arg[0])
@@ -111,7 +111,7 @@ extension Reactive where Base: WKWebView {
     }
     
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)`
-    public var didReceiveChallenge: ControlEvent<WKChallengeEvent> {
+    public var didReceiveChallenge: ControlEvent<WKNavigationChallengeEvent> {
         /// __ChallengeHandler is same as ChallengeHandler
         /// They are interchangeable, __ChallengeHandler is for internal use.
         // ChallengeHandler is exposed to the user on subscription.
@@ -127,7 +127,7 @@ extension Reactive where Base: WKWebView {
          @discussion If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
          */
         let selector = #selector(WKNavigationDelegate.webView(_:didReceive:completionHandler:))
-        let source: Observable<WKChallengeEvent> = delegate
+        let source: Observable<WKNavigationChallengeEvent> = delegate
             .sentMessage(selector)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
