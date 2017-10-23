@@ -116,6 +116,16 @@ extension Reactive where Base: WKWebView {
         /// They are interchangeable, __ChallengeHandler is for internal use.
         // ChallengeHandler is exposed to the user on subscription.
         typealias __ChallengeHandler =  @convention(block) (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+        /*! @abstract Invoked when the web view needs to respond to an authentication challenge.
+         @param webView The web view that received the authentication challenge.
+         @param challenge The authentication challenge.
+         @param completionHandler The completion handler you must invoke to respond to the challenge. The
+         disposition argument is one of the constants of the enumerated type
+         NSURLSessionAuthChallengeDisposition. When disposition is NSURLSessionAuthChallengeUseCredential,
+         the credential argument is the credential to use, or nil to indicate continuing without a
+         credential.
+         @discussion If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
+         */
         let selector = #selector(WKNavigationDelegate.webView(_:didReceive:completionHandler:))
         let source: Observable<WKChallengeEvent> = delegate
             .sentMessage(selector)
