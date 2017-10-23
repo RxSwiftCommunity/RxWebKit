@@ -29,6 +29,11 @@ extension Reactive where Base: WKWebView {
     /// WKWebView + WKNavigation + Swift.Error
     public typealias WKNavigationFailEvent = (webView: WKWebView, navigation: WKNavigation, error: Error)
     
+    /// ChallengeHandler this is exposed to the user on subscription
+    public typealias ChallengeHandler = (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+    /// WKChallengeEvent emits a tuple event of WKWebView + challenge + ChallengeHandler
+    public typealias WKChallengeEvent = (webView: WKWebView, challenge: URLAuthenticationChallenge, handler: ChallengeHandler)
+    
     private func navigationEventWith(_ arg: [Any]) throws -> WKNavigationEvent {
         let view = try castOrThrow(WKWebView.self, arg[0])
         let nav = try castOrThrow(WKNavigation.self, arg[1])
@@ -102,6 +107,36 @@ extension Reactive where Base: WKWebView {
         let source: Observable<WKNavigationFailEvent> = delegate
             .methodInvoked(#selector(WKNavigationDelegate.webView(_:didFailProvisionalNavigation:withError:)))
             .map(navigationFailEventWith)
+        return ControlEvent(events: source)
+    }
+    
+    /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)`
+    public var didReceiveChallenge: ControlEvent<WKChallengeEvent> {
+        /// __ChallengeHandler is same as ChallengeHandler
+        /// They are interchangeable, __ChallengeHandler is for internal use.
+        // ChallengeHandler is exposed to the user on subscription.
+        typealias __ChallengeHandler =  @convention(block) (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+        let selector = #selector(WKNavigationDelegate.webView(_:didReceive:completionHandler:))
+        let source: Observable<WKChallengeEvent> = delegate
+            .sentMessage(selector)
+            .map { arg in
+                let view = try castOrThrow(WKWebView.self, arg[0])
+                let challenge = try castOrThrow(URLAuthenticationChallenge.self, arg[1])
+                /**
+                 This is a holy grail part for more information please read the following articles.
+                 1: http://codejaxy.com/q/332345/ios-objective-c-memory-management-automatic-ref-counting-objective-c-blocks-understand-one-edge-case-of-block-memory-management-in-objc
+                 2: http://www.galloway.me.uk/2012/10/a-look-inside-blocks-episode-2/
+                 3: get know how [__NSStackBlock__ + UnsafeRawPointer + unsafeBitCast] works under the hood
+                 */
+                var closureObject: AnyObject? = nil
+                var mutableArg = arg
+                mutableArg.withUnsafeMutableBufferPointer { ptr in
+                    closureObject = ptr[2] as AnyObject
+                }
+                let __challengeBlockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(closureObject as AnyObject).toOpaque())
+                let handler = unsafeBitCast(__challengeBlockPtr, to: __ChallengeHandler.self)
+                return (view, challenge, handler)
+        }
         return ControlEvent(events: source)
     }
 }
