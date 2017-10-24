@@ -34,6 +34,11 @@ extension Reactive where Base: WKWebView {
     /// WKNavigationChallengeEvent emits a tuple event of WKWebView + challenge + ChallengeHandler
     public typealias WKNavigationChallengeEvent = (webView: WKWebView, challenge: URLAuthenticationChallenge, handler: ChallengeHandler)
     
+    /// DecisionHandler this is the block exposed to the user on subscription
+    public typealias DecisionHandler = (WKNavigationResponsePolicy) -> Void
+    /// WKNavigationResponsePolicyEvent emits a tuple event of  WKWebView + WKNavigationResponse + DecisionHandler
+    public typealias WKNavigationResponsePolicyEvent = ( webView: WKWebView, reponse: WKNavigationResponse, handler: DecisionHandler)
+    
     private func navigationEventWith(_ arg: [Any]) throws -> WKNavigationEvent {
         let view = try castOrThrow(WKWebView.self, arg[0])
         let nav = try castOrThrow(WKNavigation.self, arg[1])
@@ -55,7 +60,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didCommit navigation: WKNavigation!)`.
     public var didCommitNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
-            .methodInvoked(#selector(WKNavigationDelegate.webView(_:didCommit:)))
+            .methodInvoked(.didCommitNavigation)
             .map(navigationEventWith)
         return ControlEvent(events: source)
     }
@@ -63,7 +68,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)`.
     public var didStartProvisionalNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
-            .methodInvoked(#selector(WKNavigationDelegate.webView(_:didStartProvisionalNavigation:)))
+            .methodInvoked(.didStartProvisionalNavigation)
             .map(navigationEventWith)
         return ControlEvent(events: source)
     }
@@ -71,7 +76,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didFinish navigation: WKNavigation!)`
     public var didFinishNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
-            .methodInvoked(#selector(WKNavigationDelegate.webView(_:didFinish:)))
+            .methodInvoked(.didFinishNavigation)
             .map(navigationEventWith)
         return ControlEvent(events: source)
     }
@@ -81,7 +86,7 @@ extension Reactive where Base: WKWebView {
     @available(iOS 9.0, *)
     public var didTerminate: ControlEvent<WKWebView> {
         let source: Observable<WKWebView> = delegate
-            .methodInvoked(#selector(WKNavigationDelegate.webViewWebContentProcessDidTerminate(_:)))
+            .methodInvoked(.didTerminate)
             .map { try castOrThrow(WKWebView.self, $0[0]) }
         return ControlEvent(events: source)
     }
@@ -89,7 +94,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!)`.
     public var didReceiveServerRedirectForProvisionalNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
-            .methodInvoked(#selector(WKNavigationDelegate.webView(_:didReceiveServerRedirectForProvisionalNavigation:)))
+            .methodInvoked(.didReceiveServerRedirectForProvisionalNavigation)
             .map(navigationEventWith)
         return ControlEvent(events: source)
     }
@@ -97,7 +102,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error)`.
     public var didFailNavigation: ControlEvent<WKNavigationFailEvent> {
         let source: Observable<WKNavigationFailEvent> = delegate
-            .methodInvoked(#selector(WKNavigationDelegate.webView(_:didFail:withError:)))
+            .methodInvoked(.didFailNavigation)
             .map(navigationFailEventWith)
         return ControlEvent(events: source)
     }
@@ -105,7 +110,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error)`.
     public var didFailProvisionalNavigation: ControlEvent<WKNavigationFailEvent> {
         let source: Observable<WKNavigationFailEvent> = delegate
-            .methodInvoked(#selector(WKNavigationDelegate.webView(_:didFailProvisionalNavigation:withError:)))
+            .methodInvoked(.didFailProvisionalNavigation)
             .map(navigationFailEventWith)
         return ControlEvent(events: source)
     }
@@ -126,9 +131,8 @@ extension Reactive where Base: WKWebView {
          credential.
          @discussion If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
          */
-        let selector = #selector(WKNavigationDelegate.webView(_:didReceive:completionHandler:))
         let source: Observable<WKNavigationChallengeEvent> = delegate
-            .sentMessage(selector)
+            .sentMessage(.didReceiveChallenge)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
                 let challenge = try castOrThrow(URLAuthenticationChallenge.self, arg[1])
@@ -149,6 +153,18 @@ extension Reactive where Base: WKWebView {
         }
         return ControlEvent(events: source)
     }
+}
+
+fileprivate extension Selector {
+    static let didCommitNavigation = #selector(WKNavigationDelegate.webView(_:didCommit:))
+    static let didStartProvisionalNavigation = #selector(WKNavigationDelegate.webView(_:didStartProvisionalNavigation:))
+    static let didFinishNavigation = #selector(WKNavigationDelegate.webView(_:didFinish:))
+    static let didReceiveServerRedirectForProvisionalNavigation = #selector(WKNavigationDelegate.webView(_:didReceiveServerRedirectForProvisionalNavigation:))
+    static let didFailNavigation = #selector(WKNavigationDelegate.webView(_:didFail:withError:))
+    static let didFailProvisionalNavigation = #selector(WKNavigationDelegate.webView(_:didFailProvisionalNavigation:withError:))
+    static let didReceiveChallenge = #selector(WKNavigationDelegate.webView(_:didReceive:completionHandler:))
+    @available(iOS 9.0, *)
+    static let didTerminate = #selector(WKNavigationDelegate.webViewWebContentProcessDidTerminate(_:))
 }
 
 
