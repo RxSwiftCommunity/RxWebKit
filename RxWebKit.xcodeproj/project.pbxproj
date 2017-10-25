@@ -23,6 +23,8 @@
 		6B616B2F285CDDC880DAB26F /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */; };
 		C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
 		C4607FD11FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
+		C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
+		C4607FD71FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
 		C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E617F1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
@@ -74,6 +76,7 @@
 		A06BE07DD958EBAC83F7BA53 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		AA7B81072D217E470FE2C4C9 /* Pods-RxWebKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxWebKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxWebKit/Pods-RxWebKit.release.xcconfig"; sourceTree = "<group>"; };
 		C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
+		C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxWKUIDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +130,7 @@
 				C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */,
 				C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */,
 				C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */,
+				C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -449,6 +453,7 @@
 				C48E61851F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */,
 				C48E617F1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */,
 				C4607FD11FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */,
+				C4607FD71FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +474,7 @@
 				C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */,
 				C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */,
 				C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */,
+				C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
