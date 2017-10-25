@@ -26,7 +26,20 @@ class AuthChallengeViewController: UIViewController {
             .didReceiveChallenge
             .debug("didReceiveChallenge")
             .subscribe(onNext: {(webView, challenge, handler) in
-                let credential = URLCredential(user: "guest-bad-user", password: "guest-bad-password", persistence: URLCredential.Persistence.forSession)
+                guard challenge.previousFailureCount == 0 else {
+                    handler(URLSession.AuthChallengeDisposition.performDefaultHandling, nil)
+                    return
+                }
+                /*
+                 The correct credentials is as follows:
+                 
+                 user = guest
+                 password = guest
+                 
+                 but I want you to start with the failed credentials so you see how it works.
+                 However enjoys :)
+                */
+                let credential = URLCredential(user: "bad-user", password: "bad-password", persistence: URLCredential.Persistence.forSession)
                 challenge.sender?.use(credential, for: challenge)
                 handler(URLSession.AuthChallengeDisposition.useCredential, credential)
             })
