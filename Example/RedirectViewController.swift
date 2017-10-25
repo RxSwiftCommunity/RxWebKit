@@ -3,7 +3,7 @@
 //  Example
 //
 //  Created by Bob Godwin Obi on 10/25/17.
-//  Copyright © 2017 MokuMokuCloud. All rights reserved.
+//  Copyright © 2017 RxSwift Community. All rights reserved.
 //
 
 import UIKit

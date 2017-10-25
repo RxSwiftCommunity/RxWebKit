@@ -3,7 +3,7 @@
 //  RxWebKit
 //
 //  Created by Bob Obi on 25.10.17.
-//  Copyright © 2017 MokuMokuCloud. All rights reserved.
+//  Copyright © 2017 RxSwift Community. All rights reserved.
 //
 
 import WebKit
