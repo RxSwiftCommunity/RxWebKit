@@ -38,7 +38,7 @@ extension Reactive where Base: WKWebView {
     public typealias DecisionHandler = (WKNavigationResponsePolicy) -> Void
     /// WKNavigationResponsePolicyEvent emits a tuple event of  WKWebView + WKNavigationResponse + DecisionHandler
     public typealias WKNavigationResponsePolicyEvent = ( webView: WKWebView, reponse: WKNavigationResponse, handler: DecisionHandler)
-    
+
     private func navigationEventWith(_ arg: [Any]) throws -> WKNavigationEvent {
         let view = try castOrThrow(WKWebView.self, arg[0])
         let nav = try castOrThrow(WKNavigation.self, arg[1])
@@ -153,6 +153,26 @@ extension Reactive where Base: WKWebView {
         }
         return ControlEvent(events: source)
     }
+    
+    /// Reactive wrapper for `func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void)`
+    public var decidePolicyNavigationResponse: ControlEvent<WKNavigationResponsePolicyEvent> {
+        typealias __DecisionHandler = @convention(block) (WKNavigationResponsePolicy) -> ()
+        let source:Observable<WKNavigationResponsePolicyEvent> = delegate
+            .methodInvoked(.decidePolicyNavigationResponse).map { args in
+                let view = try castOrThrow(WKWebView.self, args[0])
+                let response = try castOrThrow(WKNavigationResponse.self, args[1])
+                var closureObject: AnyObject? = nil
+                var mutableArgs = args
+                mutableArgs.withUnsafeMutableBufferPointer { ptr in
+                    closureObject = ptr[2] as AnyObject
+                }
+                let __decisionBlockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(closureObject as AnyObject).toOpaque())
+                let handler = unsafeBitCast(__decisionBlockPtr, to: __DecisionHandler.self)
+                return (view, response, handler)
+        }
+        
+        return ControlEvent(events: source)
+    }
 }
 
 fileprivate extension Selector {
@@ -165,6 +185,7 @@ fileprivate extension Selector {
     static let didReceiveChallenge = #selector(WKNavigationDelegate.webView(_:didReceive:completionHandler:))
     @available(iOS 9.0, *)
     static let didTerminate = #selector(WKNavigationDelegate.webViewWebContentProcessDidTerminate(_:))
+    static let decidePolicyNavigationResponse = #selector(WKNavigationDelegate.webView(_:decidePolicyFor:decisionHandler:) as ((WKNavigationDelegate) -> (WKWebView, WKNavigationResponse, @escaping(WKNavigationResponsePolicy) -> Void) -> Void)?)
 }
 
 
