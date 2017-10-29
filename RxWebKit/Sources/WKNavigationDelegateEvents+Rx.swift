@@ -38,6 +38,10 @@ extension Reactive where Base: WKWebView {
     public typealias DecisionHandler = (WKNavigationResponsePolicy) -> Void
     /// WKNavigationResponsePolicyEvent emits a tuple event of  WKWebView + WKNavigationResponse + DecisionHandler
     public typealias WKNavigationResponsePolicyEvent = ( webView: WKWebView, reponse: WKNavigationResponse, handler: DecisionHandler)
+    /// ActionHandler this is the block exposed to the user on subscription
+    public typealias ActionHandler = (WKNavigationActionPolicy) -> Void
+    /// WKNavigationActionPolicyEvent emits a tuple event of  WKWebView + WKNavigationAction + ActionHandler
+    public typealias WKNavigationActionPolicyEvent = ( webView: WKWebView, action: WKNavigationAction, handler: ActionHandler)
 
     private func navigationEventWith(_ arg: [Any]) throws -> WKNavigationEvent {
         let view = try castOrThrow(WKWebView.self, arg[0])
@@ -173,6 +177,26 @@ extension Reactive where Base: WKWebView {
         
         return ControlEvent(events: source)
     }
+    
+    /// Reactive wrapper for `func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void)`
+    public var decidePolicyNavigationAction: ControlEvent<WKNavigationActionPolicyEvent> {
+        typealias __ActionHandler = @convention(block) (WKNavigationActionPolicy) -> ()
+        let source:Observable<WKNavigationActionPolicyEvent> = delegate
+            .methodInvoked(.decidePolicyNavigationAction).map { args in
+                let view = try castOrThrow(WKWebView.self, args[0])
+                let action = try castOrThrow(WKNavigationAction.self, args[1])
+                var closureObject: AnyObject? = nil
+                var mutableArgs = args
+                mutableArgs.withUnsafeMutableBufferPointer { ptr in
+                    closureObject = ptr[2] as AnyObject
+                }
+                let __actionBlockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(closureObject as AnyObject).toOpaque())
+                let handler = unsafeBitCast(__actionBlockPtr, to: __ActionHandler.self)
+                return (view, action, handler)
+        }
+        
+        return ControlEvent(events: source)
+    }
 }
 
 fileprivate extension Selector {
@@ -186,6 +210,7 @@ fileprivate extension Selector {
     @available(iOS 9.0, *)
     static let didTerminate = #selector(WKNavigationDelegate.webViewWebContentProcessDidTerminate(_:))
     static let decidePolicyNavigationResponse = #selector(WKNavigationDelegate.webView(_:decidePolicyFor:decisionHandler:) as ((WKNavigationDelegate) -> (WKWebView, WKNavigationResponse, @escaping(WKNavigationResponsePolicy) -> Void) -> Void)?)
+    static let decidePolicyNavigationAction = #selector(WKNavigationDelegate.webView(_:decidePolicyFor:decisionHandler:) as ((WKNavigationDelegate) -> (WKWebView, WKNavigationAction, @escaping(WKNavigationActionPolicy) -> Void) -> Void)?)
 }
 
 
