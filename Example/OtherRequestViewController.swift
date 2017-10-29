@@ -63,6 +63,14 @@ class OtherRequestViewController: UIViewController {
                 handler(.allow)
             })
             .disposed(by: bag)
+        
+        wkWebView.rx
+            .decidePolicyNavigationAction
+            .debug("decidePolicyNavigationAction")
+            .subscribe(onNext: {(_, _, handler) in
+                handler(.allow)
+            })
+            .disposed(by: bag)
     }
     
     override func viewDidLayoutSubviews() {
