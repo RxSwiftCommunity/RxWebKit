@@ -21,6 +21,20 @@
 		42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
 		6B616B2F285CDDC880DAB26F /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */; };
+		C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
+		C4607FD11FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
+		C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
+		C4607FD71FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
+		C4607FDB1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */; };
+		C4607FDD1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FDC1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift */; };
+		C4607FE11FA0F549002DA12F /* AuthChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FE01FA0F549002DA12F /* AuthChallengeViewController.swift */; };
+		C4878CD61FA1066C00B12C60 /* FailedRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */; };
+		C4878CD81FA117E900B12C60 /* RedirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD71FA117E900B12C60 /* RedirectViewController.swift */; };
+		C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */; };
+		C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
+		C48E617F1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
+		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
+		C48E61851F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +81,16 @@
 		494317696D9F726E88C1D1C9 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A06BE07DD958EBAC83F7BA53 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		AA7B81072D217E470FE2C4C9 /* Pods-RxWebKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxWebKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxWebKit/Pods-RxWebKit.release.xcconfig"; sourceTree = "<group>"; };
+		C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
+		C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxWKUIDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
+		C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptAlertPanelViewController.swift; sourceTree = "<group>"; };
+		C4607FDC1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptConfirmPanelViewController.swift; sourceTree = "<group>"; };
+		C4607FE01FA0F549002DA12F /* AuthChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChallengeViewController.swift; sourceTree = "<group>"; };
+		C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedRequestViewController.swift; sourceTree = "<group>"; };
+		C4878CD71FA117E900B12C60 /* RedirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectViewController.swift; sourceTree = "<group>"; };
+		C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
+		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
+		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */,
+				C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */,
+				C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */,
+				C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */,
+				C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -148,6 +176,12 @@
 				42F426AE1C66223E001FED46 /* Assets.xcassets */,
 				42F426AC1C66223E001FED46 /* Info.plist */,
 				42F426B41C66223E001FED46 /* ViewController.swift */,
+				C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */,
+				C4607FDC1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift */,
+				C4607FE01FA0F549002DA12F /* AuthChallengeViewController.swift */,
+				C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */,
+				C4878CD71FA117E900B12C60 /* RedirectViewController.swift */,
+				C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -270,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = MokuMokuCloud;
 				TargetAttributes = {
 					424205791C89E95100214DA1 = {
@@ -434,6 +468,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				424205821C89E99500214DA1 /* Rx+WebKit.swift in Sources */,
+				C48E61851F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */,
+				C48E617F1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */,
+				C4607FD11FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */,
+				C4607FD71FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,8 +479,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4607FE11FA0F549002DA12F /* AuthChallengeViewController.swift in Sources */,
 				42F426BA1C66223E001FED46 /* ViewController.swift in Sources */,
+				C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */,
+				C4878CD81FA117E900B12C60 /* RedirectViewController.swift in Sources */,
+				C4607FDD1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift in Sources */,
+				C4878CD61FA1066C00B12C60 /* FailedRequestViewController.swift in Sources */,
 				42F426B61C66223E001FED46 /* AppDelegate.swift in Sources */,
+				C4607FDB1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +495,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */,
+				C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */,
+				C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */,
+				C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */,
+				C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,14 +597,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -595,14 +649,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

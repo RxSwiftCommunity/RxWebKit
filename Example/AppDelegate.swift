@@ -3,7 +3,7 @@
 //  Example
 //
 //  Created by Daichi Ichihara on 2016/02/06.
-//  Copyright © 2016年 MokuMokuCloud. All rights reserved.
+//  Copyright © 2016年 RxSwift Community. All rights reserved.
 //
 
 import UIKit
