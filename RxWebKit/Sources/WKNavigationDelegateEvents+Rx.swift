@@ -86,7 +86,6 @@ extension Reactive where Base: WKWebView {
     }
     
     /// Reactive wrapper for delegate method `webViewWebContentProcessDidTerminate(_ webView: WKWebView)`.
-    /// *** available from ios 9.0 ***
     @available(iOS 9.0, *)
     public var didTerminate: ControlEvent<WKWebView> {
         let source: Observable<WKWebView> = delegate
@@ -123,7 +122,8 @@ extension Reactive where Base: WKWebView {
     public var didReceiveChallenge: ControlEvent<WKNavigationChallengeEvent> {
         /// __ChallengeHandler is same as ChallengeHandler
         /// They are interchangeable, __ChallengeHandler is for internal use.
-        // ChallengeHandler is exposed to the user on subscription.
+        /// ChallengeHandler is exposed to the user on subscription.
+        /// @convention attribute makes the swift closure compatible with Objc blocks
         typealias __ChallengeHandler =  @convention(block) (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
         /*! @abstract Invoked when the web view needs to respond to an authentication challenge.
          @param webView The web view that received the authentication challenge.
@@ -138,24 +138,55 @@ extension Reactive where Base: WKWebView {
         let source: Observable<WKNavigationChallengeEvent> = delegate
             .sentMessage(.didReceiveChallenge)
             .map { arg in
+                /// Extracting the WKWebView from the array at index zero
+                /// which is the first argument of the function signature
                 let view = try castOrThrow(WKWebView.self, arg[0])
+                /// Extracting the URLAuthenticationChallenge from the array at index one
+                /// which is the second argument of the function signature
                 let challenge = try castOrThrow(URLAuthenticationChallenge.self, arg[1])
-                /**
-                 This is a holy grail part for more information please read the following articles.
-                 1: http://codejaxy.com/q/332345/ios-objective-c-memory-management-automatic-ref-counting-objective-c-blocks-understand-one-edge-case-of-block-memory-management-in-objc
-                 2: http://www.galloway.me.uk/2012/10/a-look-inside-blocks-episode-2/
-                 3: get know how [__NSStackBlock__ + UnsafeRawPointer + unsafeBitCast] works under the hood
-                 */
+                /// Now you `Can't` transform closure easily because they are excuted
+                /// in the stack if try it you will get the famous error
+                /// `Could not cast value of type '__NSStackBlock__' (0x12327d1a8) to`
+                /// this is because closures are transformed into a system type which is `__NSStackBlock__`
+                /// the above mentioned type is not exposed to `developer`. So everytime
+                /// you execute a closure the compiler transforms it into this Object.
+                /// So you go through the following steps to get a human readable type
+                /// of the closure signature:
+                /// 1. closureObject is type of AnyObject to that holds the raw value from
+                /// the array.
                 var closureObject: AnyObject? = nil
+                /// 2. make the array mutable in order to access the `withUnsafeMutableBufferPointer`
+                /// fuctionalities
                 var mutableArg = arg
+                /// 3. Grab the closure at index 3 of the array, but we have to use the C-style
+                /// approach to access the raw memory underpinning the array and store it in closureObject
+                /// Now the object stored in the `closureObject` is `Unmanaged` and `some unspecified type`
+                /// the intelligent swift compiler doesn't know what sort of type it contains. It is Raw.
                 mutableArg.withUnsafeMutableBufferPointer { ptr in
                     closureObject = ptr[2] as AnyObject
                 }
+                /// 4. instantiate an opaque pointer to referenc the value of the `unspecified type`
                 let __challengeBlockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(closureObject as AnyObject).toOpaque())
+                /// 5. Here the magic happen we forcefully tell the compiler that anything
+                /// found at this memory address that is refrenced should be a type of
+                /// `__ChallengeHandler`!
                 let handler = unsafeBitCast(__challengeBlockPtr, to: __ChallengeHandler.self)
                 return (view, challenge, handler)
         }
+        
         return ControlEvent(events: source)
+        
+        /**
+         Reference:
+         
+         This is a holy grail part for more information please read the following articles.
+         1: http://codejaxy.com/q/332345/ios-objective-c-memory-management-automatic-ref-counting-objective-c-blocks-understand-one-edge-case-of-block-memory-management-in-objc
+         2: http://www.galloway.me.uk/2012/10/a-look-inside-blocks-episode-2/
+         3: https://maniacdev.com/2013/11/tutorial-an-in-depth-guide-to-objective-c-block-debugging
+         4: get know how [__NSStackBlock__ + UnsafeRawPointer + unsafeBitCast] works under the hood
+         5: https://en.wikipedia.org/wiki/Opaque_pointer
+         6: https://stackoverflow.com/questions/43662363/cast-objective-c-block-nsstackblock-into-swift-3
+         */
     }
     
     /// Reactive wrapper for `func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void)`
@@ -209,6 +240,11 @@ fileprivate extension Selector {
     static let didReceiveChallenge = #selector(WKNavigationDelegate.webView(_:didReceive:completionHandler:))
     @available(iOS 9.0, *)
     static let didTerminate = #selector(WKNavigationDelegate.webViewWebContentProcessDidTerminate(_:))
+    /// Xcode give error when selectors results into having same signature
+    /// because of swift style you get for example:
+    /// Ambiguous use of 'webView(_:decidePolicyFor:decisionHandler:)'
+    /// please see this link for further understanding
+    /// https://bugs.swift.org/browse/SR-3062
     static let decidePolicyNavigationResponse = #selector(WKNavigationDelegate.webView(_:decidePolicyFor:decisionHandler:) as ((WKNavigationDelegate) -> (WKWebView, WKNavigationResponse, @escaping(WKNavigationResponsePolicy) -> Void) -> Void)?)
     static let decidePolicyNavigationAction = #selector(WKNavigationDelegate.webView(_:decidePolicyFor:decisionHandler:) as ((WKNavigationDelegate) -> (WKWebView, WKNavigationAction, @escaping(WKNavigationActionPolicy) -> Void) -> Void)?)
 }

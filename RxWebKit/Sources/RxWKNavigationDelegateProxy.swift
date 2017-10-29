@@ -17,7 +17,6 @@ public typealias RxWKNavigationDelegate = DelegateProxy<WKWebView, WKNavigationD
 open class RxWKNavigationDelegateProxy: RxWKNavigationDelegate, DelegateProxyType, WKNavigationDelegate {
     
     /// Type of parent object
-    /// must be WKWebView!
     public weak private(set) var webView: WKWebView?
     
     /// Init with ParentObject

@@ -24,6 +24,7 @@ class RedirectViewController: UIViewController {
         
         wkWebView.rx
             .didReceiveServerRedirectForProvisionalNavigation
+            .observeOn(MainScheduler.instance)
             .debug("didReceiveServerRedirectForProvisionalNavigation")
             .subscribe(onNext: {(webView, navigation) in
                 let alert = UIAlertController(title: "Redirect Navigation", message: "you have bene redirected", preferredStyle: .alert)

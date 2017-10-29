@@ -23,6 +23,7 @@ class FailedRequestViewController: UIViewController {
         
         wkWebView.rx
             .didFailProvisionalNavigation
+            .observeOn(MainScheduler.instance)
             .debug("didFailProvisionalNavigation")
             .subscribe(onNext: {(webView, navigation, error) in
                 let alert = UIAlertController(title: "FailProvisionalNavigation", message: error.localizedDescription, preferredStyle: .alert)

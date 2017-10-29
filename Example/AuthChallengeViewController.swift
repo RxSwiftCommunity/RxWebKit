@@ -31,13 +31,12 @@ class AuthChallengeViewController: UIViewController {
                     return
                 }
                 /*
-                 The correct credentials is as follows:
+                 The correct credentials are:
                  
                  user = guest
                  password = guest
                  
-                 but I want you to start with the failed credentials so you see how it works.
-                 However enjoys :)
+                You might want to start with the invalid credentials to get a sense of how this code works
                 */
                 let credential = URLCredential(user: "bad-user", password: "bad-password", persistence: URLCredential.Persistence.forSession)
                 challenge.sender?.use(credential, for: challenge)
