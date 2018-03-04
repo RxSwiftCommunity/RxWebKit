@@ -18,14 +18,14 @@ extension Reactive where Base: WKWebView {
      Reactive wrapper for `title` property
      */
     public var title: Observable<String?> {
-        return self.observe(String.self, "title")
+        return self.observeWeakly(String.self, "title")
     }
 
     /**
      Reactive wrapper for `loading` property.
      */
     public var loading: Observable<Bool> {
-        return self.observe(Bool.self, "loading")
+        return self.observeWeakly(Bool.self, "loading")
             .map { $0 ?? false }
     }
 
@@ -33,7 +33,7 @@ extension Reactive where Base: WKWebView {
      Reactive wrapper for `estimatedProgress` property.
      */
     public var estimatedProgress: Observable<Double> {
-        return self.observe(Double.self, "estimatedProgress")
+        return self.observeWeakly(Double.self, "estimatedProgress")
             .map { $0 ?? 0.0 }
     }
 
@@ -41,7 +41,7 @@ extension Reactive where Base: WKWebView {
      Reactive wrapper for `url` property.
      */
     public var url: Observable<URL?> {
-        return self.observe(URL.self, "URL")
+        return self.observeWeakly(URL.self, "URL")
     }
 
 
@@ -49,7 +49,7 @@ extension Reactive where Base: WKWebView {
      Reactive wrapper for `canGoBack` property.
      */
     public var canGoBack: Observable<Bool> {
-        return self.observe(Bool.self, "canGoBack")
+        return self.observeWeakly(Bool.self, "canGoBack")
             .map { $0 ?? false }
     }
 
@@ -57,7 +57,7 @@ extension Reactive where Base: WKWebView {
      Reactive wrapper for `canGoForward` property.
      */
     public var canGoForward: Observable<Bool> {
-        return self.observe(Bool.self, "canGoForward")
+        return self.observeWeakly(Bool.self, "canGoForward")
             .map { $0 ?? false }
     }
 }
