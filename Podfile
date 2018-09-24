@@ -1,12 +1,12 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
-target 'RxWebKit' do
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+target 'Example' do
+  pod 'RxSwift',    '~> 4.3'
+  pod 'RxCocoa',    '~> 4.3'
 end
 
-target 'Example' do
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+target 'RxWebKit' do
+    pod 'RxSwift',    '~> 4.3'
+    pod 'RxCocoa',    '~> 4.3'
 end
