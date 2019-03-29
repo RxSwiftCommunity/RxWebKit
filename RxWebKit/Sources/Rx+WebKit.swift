@@ -66,14 +66,16 @@ extension Reactive where Base: WKWebView {
 	///
 	/// - Parameter javaScriptString: The JavaScript string to evaluate.
 	/// - Returns: Observable sequence of result of the script evaluation.
-	public func evaluateJavaScript(_ javaScriptString:String) -> Single<Any?> {
+	public func evaluateJavaScript(_ javaScriptString:String) -> Observable<Any> {
 		weak var webViewRef = self.base
-		return Single.create { single in
+		return Observable.create { observer in
 			webViewRef?.evaluateJavaScript(javaScriptString) { value, error in
 				if let error = error {
-					single(.error(error))
+					observer.onError(error)
+				} else if let value = value {
+					observer.onNext(value)
 				} else {
-					single(.success(value))
+					observer.onNext(())
 				}
 			}
 			return Disposables.create()
