@@ -60,4 +60,23 @@ extension Reactive where Base: WKWebView {
         return self.observeWeakly(Bool.self, "canGoForward")
             .map { $0 ?? false }
     }
+	
+	
+	/// Reactive wrapper for `evaluateJavaScript(_:completionHandler:)` method.
+	///
+	/// - Parameter javaScriptString: The JavaScript string to evaluate.
+	/// - Returns: Observable sequence of result of the script evaluation.
+	public func evaluateJavaScript(_ javaScriptString:String) -> Single<Any?> {
+		weak var webViewRef = self.base
+		return Single.create { single in
+			webViewRef?.evaluateJavaScript(javaScriptString) { value, error in
+				if let error = error {
+					single(.error(error))
+				} else {
+					single(.success(value))
+				}
+			}
+			return Disposables.create()
+		}
+	}
 }
