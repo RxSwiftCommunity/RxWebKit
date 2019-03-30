@@ -35,6 +35,7 @@
 		C48E617F1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
 		C48E61851F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
+		F6D7DD0D224F62860066C90F /* RxWKUserContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUserContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */,
 				C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */,
 				C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */,
+				F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */,
 				C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */,
 				C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */,
+				F6D7DD0D224F62860066C90F /* RxWKUserContentController.swift in Sources */,
 				C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
