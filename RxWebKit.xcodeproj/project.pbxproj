@@ -35,6 +35,8 @@
 		C48E617F1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
 		C48E61851F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
+		F68CEB9E22521B1D00498607 /* InvokeJSFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */; };
+		F68CEBA022521B2B00498607 /* ObservingJSEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CEB9F22521B2B00498607 /* ObservingJSEventViewController.swift */; };
 		F6D7DD0D224F62860066C90F /* RxWKUserContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeJSFunctionViewController.swift; sourceTree = "<group>"; };
+		F68CEB9F22521B2B00498607 /* ObservingJSEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingJSEventViewController.swift; sourceTree = "<group>"; };
 		F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUserContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +189,8 @@
 				C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */,
 				C4878CD71FA117E900B12C60 /* RedirectViewController.swift */,
 				C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */,
+				F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */,
+				F68CEB9F22521B2B00498607 /* ObservingJSEventViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -483,8 +489,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4607FE11FA0F549002DA12F /* AuthChallengeViewController.swift in Sources */,
+				F68CEB9E22521B1D00498607 /* InvokeJSFunctionViewController.swift in Sources */,
 				42F426BA1C66223E001FED46 /* ViewController.swift in Sources */,
 				C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */,
+				F68CEBA022521B2B00498607 /* ObservingJSEventViewController.swift in Sources */,
 				C4878CD81FA117E900B12C60 /* RedirectViewController.swift in Sources */,
 				C4607FDD1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift in Sources */,
 				C4878CD61FA1066C00B12C60 /* FailedRequestViewController.swift in Sources */,
