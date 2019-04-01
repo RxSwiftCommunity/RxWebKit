@@ -32,8 +32,8 @@ public extension Reactive where Base : WKUserContentController {
     ///
     /// - Parameter name: The name of the message handler
     /// - Returns: Observable sequence of script message.
-    func scriptMessage(forName name:String) -> Observable<WKScriptMessage> {
-        return Observable.create { [weak base] observer in
+    func scriptMessage(forName name:String) -> ControlEvent<WKScriptMessage> {
+        return ControlEvent(events: Observable.create { [weak base] observer in
             let handler = WKUserContentController.MessageHandler()
             base?.add(handler, name: name)
             handler.onReceive {
@@ -42,6 +42,6 @@ public extension Reactive where Base : WKUserContentController {
             return Disposables.create {
                 base?.removeScriptMessageHandler(forName: name)
             }
-        }
+        })
     }
 }
