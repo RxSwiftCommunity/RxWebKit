@@ -27,10 +27,10 @@ class RedirectViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .debug("didReceiveServerRedirectForProvisionalNavigation")
             .subscribe(onNext: { [weak self] webView, navigation in
-                guard let strongSelf = self else { return }
+                guard let self = self else { return }
                 let alert = UIAlertController(title: "Redirect Navigation", message: "you have bene redirected", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                strongSelf.present(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
             })
             .disposed(by: bag)
     }

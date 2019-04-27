@@ -26,10 +26,10 @@ class JavaScriptConfirmPanelViewController: UIViewController {
             .javaScriptConfirmPanel
             .debug("javaScriptConfirmPanel")
             .subscribe(onNext: { [weak self] webView, message, frame, handler in
-                guard let strongSelf = self else { return }
+                guard let self = self else { return }
                 let alert = UIAlertController(title: "JavaScriptConfirm", message: message, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                strongSelf.present(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 handler(true)
             })
             .disposed(by: bag)
