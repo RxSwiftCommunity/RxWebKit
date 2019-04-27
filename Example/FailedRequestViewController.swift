@@ -25,10 +25,11 @@ class FailedRequestViewController: UIViewController {
             .didFailProvisionalNavigation
             .observeOn(MainScheduler.instance)
             .debug("didFailProvisionalNavigation")
-            .subscribe(onNext: {(webView, navigation, error) in
+            .subscribe(onNext: { [weak self] webView, navigation, error in
+                guard let strongSelf = self else { return }
                 let alert = UIAlertController(title: "FailProvisionalNavigation", message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                strongSelf.present(alert, animated: true, completion: nil)
             })
             .disposed(by: bag)
     }
