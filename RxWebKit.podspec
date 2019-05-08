@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxWebKit"
-  s.version      = "0.3.7"
+  s.version      = "0.3.8"
   s.summary      = "RxWebKit is a RxSwift wrapper for WebKit."
   s.description  = <<-DESC
   RxWebKit is a RxSwift wrapper for `WebKit`.
@@ -36,6 +36,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.dependency 'RxSwift', '~> 4.0'
-  s.dependency 'RxCocoa', '~> 4.0'
+  s.dependency 'RxSwift', '~> 5.0'
+  s.dependency 'RxCocoa', '~> 5.0'
 end
