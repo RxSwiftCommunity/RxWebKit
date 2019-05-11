@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D9D193AAB6629FC0C06059F /* Pods_RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FB3C90F3D7D4416B825C36 /* Pods_RxWebKit.framework */; };
 		424205821C89E99500214DA1 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
 		424205851C89E9DF00214DA1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
 		424205861C89E9DF00214DA1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
@@ -20,7 +19,6 @@
 		42F426D51C6623C5001FED46 /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; };
 		42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
-		6B616B2F285CDDC880DAB26F /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */; };
 		C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
 		C4607FD11FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
 		C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
@@ -65,7 +63,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08C4DA7227F508A46FCA1DD6 /* Pods-RxWebKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxWebKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxWebKit/Pods-RxWebKit.debug.xcconfig"; sourceTree = "<group>"; };
 		4242057A1C89E95100214DA1 /* RxWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		424205831C89E9DF00214DA1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		424205841C89E9DF00214DA1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -80,10 +77,6 @@
 		42F426D01C6623C5001FED46 /* RxWebKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxWebKit.h; sourceTree = "<group>"; };
 		42F426D21C6623C5001FED46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+WebKit.swift"; sourceTree = "<group>"; };
-		46FB3C90F3D7D4416B825C36 /* Pods_RxWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		494317696D9F726E88C1D1C9 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A06BE07DD958EBAC83F7BA53 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		AA7B81072D217E470FE2C4C9 /* Pods-RxWebKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxWebKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxWebKit/Pods-RxWebKit.release.xcconfig"; sourceTree = "<group>"; };
 		C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
 		C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxWKUIDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptAlertPanelViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +87,6 @@
 		C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
-		E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeJSFunctionViewController.swift; sourceTree = "<group>"; };
 		F68CEB9F22521B2B00498607 /* ObservingJSEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingJSEventViewController.swift; sourceTree = "<group>"; };
 		F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUserContentController.swift; sourceTree = "<group>"; };
@@ -115,7 +107,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F426D51C6623C5001FED46 /* RxWebKit.framework in Frameworks */,
-				6B616B2F285CDDC880DAB26F /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,24 +114,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D9D193AAB6629FC0C06059F /* Pods_RxWebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38AC8373BCFFF4462AC0FA18 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				494317696D9F726E88C1D1C9 /* Pods-Example.debug.xcconfig */,
-				A06BE07DD958EBAC83F7BA53 /* Pods-Example.release.xcconfig */,
-				08C4DA7227F508A46FCA1DD6 /* Pods-RxWebKit.debug.xcconfig */,
-				AA7B81072D217E470FE2C4C9 /* Pods-RxWebKit.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		42B12EFB1C6DFC7600C280BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +140,6 @@
 				733B51F3D0F2B4B1E9A99FDC /* Frameworks */,
 				42F426981C66200D001FED46 /* Products */,
 				42F426CF1C6623C5001FED46 /* RxWebKit */,
-				38AC8373BCFFF4462AC0FA18 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,8 +197,6 @@
 			children = (
 				424205831C89E9DF00214DA1 /* RxSwift.framework */,
 				424205841C89E9DF00214DA1 /* RxCocoa.framework */,
-				E3C34C58279FC5E2A35DD9F1 /* Pods_Example.framework */,
-				46FB3C90F3D7D4416B825C36 /* Pods_RxWebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -268,12 +244,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42F426A91C66200D001FED46 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				ACCC97C0F898A55387025D34 /* [CP] Check Pods Manifest.lock */,
 				42F426931C66200D001FED46 /* Sources */,
 				42F426941C66200D001FED46 /* Frameworks */,
 				42F426951C66200D001FED46 /* Resources */,
 				42F426DA1C6623C5001FED46 /* Embed Frameworks */,
-				35356C7A9C70C337D133CE93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,7 +263,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42F426D71C6623C5001FED46 /* Build configuration list for PBXNativeTarget "RxWebKit" */;
 			buildPhases = (
-				3BD2CAD6CA94D19B987A002C /* [CP] Check Pods Manifest.lock */,
 				42F426C91C6623C5001FED46 /* Sources */,
 				42F426CA1C6623C5001FED46 /* Frameworks */,
 				42F426CB1C6623C5001FED46 /* Headers */,
@@ -380,67 +353,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		35356C7A9C70C337D133CE93 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3BD2CAD6CA94D19B987A002C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxWebKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ACCC97C0F898A55387025D34 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		424205751C89E95100214DA1 /* Sources */ = {
@@ -679,7 +591,6 @@
 		};
 		42F426AA1C66200D001FED46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 494317696D9F726E88C1D1C9 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -696,7 +607,6 @@
 		};
 		42F426AB1C66200D001FED46 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A06BE07DD958EBAC83F7BA53 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -713,7 +623,6 @@
 		};
 		42F426D81C6623C5001FED46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08C4DA7227F508A46FCA1DD6 /* Pods-RxWebKit.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -740,7 +649,6 @@
 		};
 		42F426D91C6623C5001FED46 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA7B81072D217E470FE2C4C9 /* Pods-RxWebKit.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
