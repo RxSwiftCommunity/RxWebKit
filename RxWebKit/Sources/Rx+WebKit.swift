@@ -8,10 +8,8 @@
 
 import Foundation
 import WebKit
-#if !RX_NO_MODULE
-    import RxSwift
-    import RxCocoa
-#endif
+import RxSwift
+import RxCocoa
 
 extension Reactive where Base: WKWebView {
     /**
