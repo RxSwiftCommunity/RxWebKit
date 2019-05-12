@@ -16,6 +16,14 @@
 		42F426D51C6623C5001FED46 /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; };
 		42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
+		C4135FFE22875FBE0061933C /* RxWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */; };
+		C4136011228764840061933C /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B3228748A0004B05A5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4136012228764840061933C /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B2228748A0004B05A5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4136013228764840061933C /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B4228748A0004B05A5 /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4136014228764840061933C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4136015228764840061933C /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C41360172287651C0061933C /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; };
+		C4136018228765250061933C /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
 		C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
 		C4607FDB1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */; };
@@ -26,6 +34,12 @@
 		C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */; };
 		C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
+		C4CB7D4822874E5600FB8D99 /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; };
+		C4CB7D4E22874E8600FB8D99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B3228748A0004B05A5 /* Nimble.framework */; };
+		C4CB7D4F22874E8600FB8D99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B2228748A0004B05A5 /* Quick.framework */; };
+		C4CB7D5022874E8600FB8D99 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
+		C4CB7D5122874E8600FB8D99 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
+		C4CB7D5222874E8600FB8D99 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B4228748A0004B05A5 /* RxTest.framework */; };
 		C4D3239D22874550004B05A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
 		C4D3239E22874550004B05A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
 		C4D3239F228746A7004B05A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
@@ -37,6 +51,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		42F426D31C6623C5001FED46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42F4268F1C66200D001FED46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42F426CD1C6623C5001FED46;
+			remoteInfo = RxWebKit;
+		};
+		C4CB7D4922874E5600FB8D99 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42F4268F1C66200D001FED46 /* Project object */;
 			proxyType = 1;
@@ -57,6 +78,22 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C41360102287644B0061933C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C4136011228764840061933C /* Nimble.framework in Embed Frameworks */,
+				C4136012228764840061933C /* Quick.framework in Embed Frameworks */,
+				C4136013228764840061933C /* RxTest.framework in Embed Frameworks */,
+				C4136014228764840061933C /* RxSwift.framework in Embed Frameworks */,
+				C4136015228764840061933C /* RxCocoa.framework in Embed Frameworks */,
+				C4136018228765250061933C /* RxRelay.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +110,7 @@
 		42F426D01C6623C5001FED46 /* RxWebKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxWebKit.h; sourceTree = "<group>"; };
 		42F426D21C6623C5001FED46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+WebKit.swift"; sourceTree = "<group>"; };
+		C41360162287651B0061933C /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
 		C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxWKUIDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptAlertPanelViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +121,12 @@
 		C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
+		C4CB7D4322874E5600FB8D99 /* RxWebKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxWebKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4CB7D4722874E5600FB8D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWebKitTests.swift; sourceTree = "<group>"; };
+		C4D323B2228748A0004B05A5 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		C4D323B3228748A0004B05A5 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		C4D323B4228748A0004B05A5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeJSFunctionViewController.swift; sourceTree = "<group>"; };
 		F68CEB9F22521B2B00498607 /* ObservingJSEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingJSEventViewController.swift; sourceTree = "<group>"; };
 		F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUserContentController.swift; sourceTree = "<group>"; };
@@ -108,6 +152,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4CB7D4022874E5600FB8D99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C41360172287651C0061933C /* RxRelay.framework in Frameworks */,
+				C4CB7D4E22874E8600FB8D99 /* Nimble.framework in Frameworks */,
+				C4CB7D4F22874E8600FB8D99 /* Quick.framework in Frameworks */,
+				C4CB7D5022874E8600FB8D99 /* RxCocoa.framework in Frameworks */,
+				C4CB7D5122874E8600FB8D99 /* RxSwift.framework in Frameworks */,
+				C4CB7D5222874E8600FB8D99 /* RxTest.framework in Frameworks */,
+				C4CB7D4822874E5600FB8D99 /* RxWebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -128,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				42F426991C66200D001FED46 /* Example */,
+				C4CB7D4422874E5600FB8D99 /* RxWebKitTests */,
 				733B51F3D0F2B4B1E9A99FDC /* Frameworks */,
 				42F426981C66200D001FED46 /* Products */,
 				42F426CF1C6623C5001FED46 /* RxWebKit */,
@@ -139,6 +198,7 @@
 			children = (
 				42F426971C66200D001FED46 /* Example.app */,
 				42F426CE1C6623C5001FED46 /* RxWebKit.framework */,
+				C4CB7D4322874E5600FB8D99 /* RxWebKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,10 +245,23 @@
 		733B51F3D0F2B4B1E9A99FDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C41360162287651B0061933C /* RxRelay.framework */,
+				C4D323B3228748A0004B05A5 /* Nimble.framework */,
+				C4D323B2228748A0004B05A5 /* Quick.framework */,
+				C4D323B4228748A0004B05A5 /* RxTest.framework */,
 				424205831C89E9DF00214DA1 /* RxSwift.framework */,
 				424205841C89E9DF00214DA1 /* RxCocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4CB7D4422874E5600FB8D99 /* RxWebKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */,
+				C4CB7D4722874E5600FB8D99 /* Info.plist */,
+			);
+			path = RxWebKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,13 +315,32 @@
 			productReference = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		C4CB7D4222874E5600FB8D99 /* RxWebKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4CB7D4B22874E5600FB8D99 /* Build configuration list for PBXNativeTarget "RxWebKitTests" */;
+			buildPhases = (
+				C4CB7D3F22874E5600FB8D99 /* Sources */,
+				C4CB7D4022874E5600FB8D99 /* Frameworks */,
+				C4CB7D4122874E5600FB8D99 /* Resources */,
+				C41360102287644B0061933C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4CB7D4A22874E5600FB8D99 /* PBXTargetDependency */,
+			);
+			name = RxWebKitTests;
+			productName = RxWebKitTests;
+			productReference = C4CB7D4322874E5600FB8D99 /* RxWebKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		42F4268F1C66200D001FED46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = MokuMokuCloud;
 				TargetAttributes = {
@@ -262,6 +354,10 @@
 						DevelopmentTeam = 6XJDQ2F5E3;
 						DevelopmentTeamName = "Daichi Ichihara (Personal Team)";
 						LastSwiftMigration = 0800;
+					};
+					C4CB7D4222874E5600FB8D99 = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -281,6 +377,7 @@
 			targets = (
 				42F426961C66200D001FED46 /* Example */,
 				42F426CD1C6623C5001FED46 /* RxWebKit */,
+				C4CB7D4222874E5600FB8D99 /* RxWebKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,6 +394,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		42F426CC1C6623C5001FED46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CB7D4122874E5600FB8D99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,6 +440,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4CB7D3F22874E5600FB8D99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4135FFE22875FBE0061933C /* RxWebKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -343,6 +455,11 @@
 			isa = PBXTargetDependency;
 			target = 42F426CD1C6623C5001FED46 /* RxWebKit */;
 			targetProxy = 42F426D31C6623C5001FED46 /* PBXContainerItemProxy */;
+		};
+		C4CB7D4A22874E5600FB8D99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42F426CD1C6623C5001FED46 /* RxWebKit */;
+			targetProxy = C4CB7D4922874E5600FB8D99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -573,6 +690,63 @@
 			};
 			name = Release;
 		};
+		C4CB7D4C22874E5600FB8D99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = RxWebKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = bobgodwinx.RxWebKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4CB7D4D22874E5600FB8D99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = RxWebKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = bobgodwinx.RxWebKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -599,6 +773,15 @@
 			buildConfigurations = (
 				42F426D81C6623C5001FED46 /* Debug */,
 				42F426D91C6623C5001FED46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4CB7D4B22874E5600FB8D99 /* Build configuration list for PBXNativeTarget "RxWebKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4CB7D4C22874E5600FB8D99 /* Debug */,
+				C4CB7D4D22874E5600FB8D99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
