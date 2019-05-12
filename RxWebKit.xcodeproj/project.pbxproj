@@ -24,6 +24,7 @@
 		C4136015228764840061933C /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C41360172287651C0061933C /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; };
 		C4136018228765250061933C /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C413601A2288135F0061933C /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41360192288135F0061933C /* HasEventsBehavior.swift */; };
 		C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
 		C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
 		C4607FDB1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */; };
@@ -111,6 +112,7 @@
 		42F426D21C6623C5001FED46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+WebKit.swift"; sourceTree = "<group>"; };
 		C41360162287651B0061933C /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		C41360192288135F0061933C /* HasEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEventsBehavior.swift; sourceTree = "<group>"; };
 		C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
 		C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxWKUIDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptAlertPanelViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */,
+				C41360192288135F0061933C /* HasEventsBehavior.swift */,
 				C4CB7D4722874E5600FB8D99 /* Info.plist */,
 			);
 			path = RxWebKitTests;
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4135FFE22875FBE0061933C /* RxWebKitTests.swift in Sources */,
+				C413601A2288135F0061933C /* HasEventsBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
