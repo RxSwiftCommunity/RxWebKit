@@ -7,24 +7,28 @@ import RxTest
 import WebKit
 @testable import RxWebKit
 
-struct HasEventsBehaviorContext<T> {
+struct HasEventsBehaviorContext<T: Equatable> {
     let scheduler: TestScheduler
     let observable: Observable<T>
-    init(_ scheduler: TestScheduler, _ observable: Observable<T>) {
+    let expected: T?
+    init(_ scheduler: TestScheduler, _ observable: Observable<T>, _ expected: T?) {
         self.scheduler = scheduler
         self.observable = observable
+        self.expected = expected
     }
 }
 
-class HasEventsBehavior<T>: Quick.Behavior<HasEventsBehaviorContext<T>> {
+class HasEventsBehavior<T: Equatable>: Quick.Behavior<HasEventsBehaviorContext<T>> {
     override class func spec(_ context: @escaping () -> HasEventsBehaviorContext<T>) {
         var scheduler: TestScheduler!
         var observable: Observable<T>!
+        var expected: T?
         
         beforeEach {
             let cxt = context()
             scheduler = cxt.scheduler
             observable = cxt.observable
+            expected = cxt.expected
         }
         
         afterEach {
@@ -38,6 +42,7 @@ class HasEventsBehavior<T>: Quick.Behavior<HasEventsBehaviorContext<T>> {
                     let recorded = scheduler.record(source: observable)
                     scheduler.start()
                     expect(recorded.events.count).to(equal(1))
+                    expect(recorded.events[0].value.element).to(equal(expected))
                 }
             }
         }
