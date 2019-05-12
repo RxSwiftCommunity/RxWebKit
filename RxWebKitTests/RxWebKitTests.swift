@@ -9,18 +9,29 @@ import RxTest
 class RxWebKitTests: QuickSpec {
     override func spec() {
         var scheduler: TestScheduler!
-        var disposeBag: DisposeBag!
         var sut: WKWebView!
+        let html = """
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <title>RxWebKit</title>
+                </head>
+                <body>
+
+                <h1>This is a Heading</h1>
+                <p>This is a paragraph.</p>
+
+                </body>
+                </html>
+        """
         
         beforeEach {
             scheduler = TestScheduler(initialClock: 0)
-            disposeBag = DisposeBag()
             sut = WKWebView(frame: CGRect.zero)
         }
         
         afterEach {
             scheduler = nil
-            disposeBag = nil
             sut = nil
         }
     }
