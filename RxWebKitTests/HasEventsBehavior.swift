@@ -16,6 +16,33 @@ struct HasEventsBehaviorContext<T> {
     }
 }
 
+class HasEventsBehavior<T>: Quick.Behavior<HasEventsBehaviorContext<T>> {
+    override class func spec(_ context: @escaping () -> HasEventsBehaviorContext<T>) {
+        var scheduler: TestScheduler!
+        var observable: Observable<T>!
+        
+        beforeEach {
+            let cxt = context()
+            scheduler = cxt.scheduler
+            observable = cxt.observable
+        }
+        
+        afterEach {
+            scheduler = nil
+            observable = nil
+        }
+        
+        describe("Has Events Behavior") {
+            it("Actually got the event") {
+                SharingScheduler.mock(scheduler: scheduler) {
+                    let recorded = scheduler.record(source: observable)
+                    scheduler.start()
+                    expect(recorded.events.count).to(equal(1))
+                }
+            }
+        }
+    }
+}
 
 extension TestScheduler {
     /// Builds testable observer for s specific observable sequence, binds it's results and sets up disposal.
