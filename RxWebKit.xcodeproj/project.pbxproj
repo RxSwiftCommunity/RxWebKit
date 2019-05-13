@@ -13,7 +13,6 @@
 		42F426B91C66223E001FED46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F426B21C66223E001FED46 /* Main.storyboard */; };
 		42F426BA1C66223E001FED46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426B41C66223E001FED46 /* ViewController.swift */; };
 		42F426D11C6623C5001FED46 /* RxWebKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F426D01C6623C5001FED46 /* RxWebKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42F426D51C6623C5001FED46 /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; };
 		42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
 		C4135FFE22875FBE0061933C /* RxWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */; };
@@ -22,9 +21,11 @@
 		C4136013228764840061933C /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B4228748A0004B05A5 /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4136014228764840061933C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4136015228764840061933C /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C41360172287651C0061933C /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; };
 		C4136018228765250061933C /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C413601A2288135F0061933C /* HasEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41360192288135F0061933C /* HasEventsBehavior.swift */; };
+		C413602522896CC20061933C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C413602622896CC20061933C /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C413602722896CE20061933C /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
 		C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
 		C4607FDB1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */; };
@@ -35,14 +36,6 @@
 		C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */; };
 		C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
-		C4CB7D4822874E5600FB8D99 /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; };
-		C4CB7D4E22874E8600FB8D99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B3228748A0004B05A5 /* Nimble.framework */; };
-		C4CB7D4F22874E8600FB8D99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B2228748A0004B05A5 /* Quick.framework */; };
-		C4CB7D5022874E8600FB8D99 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
-		C4CB7D5122874E8600FB8D99 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
-		C4CB7D5222874E8600FB8D99 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B4228748A0004B05A5 /* RxTest.framework */; };
-		C4D3239D22874550004B05A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
-		C4D3239E22874550004B05A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
 		C4D3239F228746A7004B05A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
 		C4D323A0228746A7004B05A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
 		F68CEB9E22521B1D00498607 /* InvokeJSFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */; };
@@ -75,6 +68,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */,
+				C413602522896CC20061933C /* RxSwift.framework in Embed Frameworks */,
+				C413602622896CC20061933C /* RxCocoa.framework in Embed Frameworks */,
+				C413602722896CE20061933C /* RxRelay.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4D3239D22874550004B05A5 /* RxCocoa.framework in Frameworks */,
-				C4D3239E22874550004B05A5 /* RxSwift.framework in Frameworks */,
-				42F426D51C6623C5001FED46 /* RxWebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,13 +151,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C41360172287651C0061933C /* RxRelay.framework in Frameworks */,
-				C4CB7D4E22874E8600FB8D99 /* Nimble.framework in Frameworks */,
-				C4CB7D4F22874E8600FB8D99 /* Quick.framework in Frameworks */,
-				C4CB7D5022874E8600FB8D99 /* RxCocoa.framework in Frameworks */,
-				C4CB7D5122874E8600FB8D99 /* RxSwift.framework in Frameworks */,
-				C4CB7D5222874E8600FB8D99 /* RxTest.framework in Frameworks */,
-				C4CB7D4822874E5600FB8D99 /* RxWebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
