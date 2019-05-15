@@ -65,5 +65,42 @@ class RxWebKitTests: QuickSpec {
             HasEventsBehaviorContext(scheduler, sut.rx.canGoForward, false)
         }
         
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .didTerminate) {
+                sut.navigationDelegate?.webViewWebContentProcessDidTerminate?(sut)
+            }
+        }
+        
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .didCommitNavigation) {
+                let navigation = sut.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
+                sut.navigationDelegate?.webView?(sut, didCommit: navigation)
+            }
+        }
+        
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .didFinishNavigation) {
+                let navigation = sut.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
+                sut.navigationDelegate?.webView?(sut, didFinish: navigation)
+            }
+        }
+        
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .didReceiveServerRedirectForProvisionalNavigation) {
+                let navigation = sut.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
+                sut.navigationDelegate?.webView?(sut, didReceiveServerRedirectForProvisionalNavigation: navigation)
+            }
+        }
+        
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .didFailNavigation) {
+                let navigation = sut.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
+                sut.navigationDelegate?.webView?(sut, didFail: navigation, withError: TestError.didFailNavigation)
+            }
+        }
     }
+}
+
+enum TestError: Error {
+    case didFailNavigation
 }
