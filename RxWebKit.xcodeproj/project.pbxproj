@@ -176,10 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				42F426991C66200D001FED46 /* Example */,
-				C4CB7D4422874E5600FB8D99 /* RxWebKitTests */,
 				733B51F3D0F2B4B1E9A99FDC /* Frameworks */,
 				42F426981C66200D001FED46 /* Products */,
 				42F426CF1C6623C5001FED46 /* RxWebKit */,
+				C4CB7D4422874E5600FB8D99 /* RxWebKitTests */,
 			);
 			sourceTree = "<group>";
 		};
