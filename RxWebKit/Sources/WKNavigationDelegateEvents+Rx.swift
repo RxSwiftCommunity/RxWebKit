@@ -229,8 +229,7 @@ extension Reactive where Base: WKWebView {
         return ControlEvent(events: source)
     }
 }
-
-fileprivate extension Selector {
+extension Selector {
     static let didCommitNavigation = #selector(WKNavigationDelegate.webView(_:didCommit:))
     static let didStartProvisionalNavigation = #selector(WKNavigationDelegate.webView(_:didStartProvisionalNavigation:))
     static let didFinishNavigation = #selector(WKNavigationDelegate.webView(_:didFinish:))
