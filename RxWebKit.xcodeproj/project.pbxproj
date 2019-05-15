@@ -36,6 +36,7 @@
 		C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */; };
 		C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
+		C4CA6B07228AB1680088A7A3 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */; };
 		C4D3239F228746A7004B05A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; };
 		C4D323A0228746A7004B05A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; };
 		F68CEB9E22521B1D00498607 /* InvokeJSFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */; };
@@ -119,6 +120,7 @@
 		C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
+		C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
 		C4CB7D4322874E5600FB8D99 /* RxWebKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxWebKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CB7D4722874E5600FB8D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWebKitTests.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */,
 				C41360192288135F0061933C /* HasEventsBehavior.swift */,
+				C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */,
 				C4CB7D4722874E5600FB8D99 /* Info.plist */,
 			);
 			path = RxWebKitTests;
@@ -434,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4135FFE22875FBE0061933C /* RxWebKitTests.swift in Sources */,
+				C4CA6B07228AB1680088A7A3 /* ForwardsEventsBehavior.swift in Sources */,
 				C413601A2288135F0061933C /* HasEventsBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
