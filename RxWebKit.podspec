@@ -26,11 +26,13 @@ Pod::Spec.new do |s|
       })
       .disposed(by: disposeBag)
   ```
-                   DESC
+  DESC
 
   s.homepage     = "https://github.com/RxSwiftCommunity/RxWebKit"
   s.license      = "MIT"
-  s.author       = { "mokumoku" => "da1lawmoku2@gmail.com" }
+  s.authors       = { "mokumoku" => "da1lawmoku2@gmail.com",
+                      "RxSwift Community" => "community@rxswift.org"
+                    }
   s.source       = { :git => "https://github.com/RxSwiftCommunity/RxWebKit.git", :tag => s.version.to_s }
   s.source_files  = "RxWebKit/Sources/**/*.swift"
 

@@ -121,6 +121,10 @@
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
+		C4CA6B15228D752C0088A7A3 /* RxWebKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RxWebKit.podspec; sourceTree = SOURCE_ROOT; };
+		C4CA6B16228D75410088A7A3 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
+		C4CA6B17228D75420088A7A3 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
+		C4CA6B18228D75420088A7A3 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		C4CB7D4322874E5600FB8D99 /* RxWebKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxWebKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CB7D4722874E5600FB8D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWebKitTests.swift; sourceTree = "<group>"; };
@@ -225,6 +229,10 @@
 		42F426CF1C6623C5001FED46 /* RxWebKit */ = {
 			isa = PBXGroup;
 			children = (
+				C4CA6B15228D752C0088A7A3 /* RxWebKit.podspec */,
+				C4CA6B18228D75420088A7A3 /* Cartfile */,
+				C4CA6B16228D75410088A7A3 /* Cartfile.private */,
+				C4CA6B17228D75420088A7A3 /* Cartfile.resolved */,
 				42B12EFB1C6DFC7600C280BD /* Sources */,
 				42F426D21C6623C5001FED46 /* Info.plist */,
 				42F426D01C6623C5001FED46 /* RxWebKit.h */,
