@@ -98,9 +98,17 @@ class RxWebKitTests: QuickSpec {
                 sut.navigationDelegate?.webView?(sut, didFail: navigation, withError: TestError.didFailNavigation)
             }
         }
+        
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .didFailProvisionalNavigation) {
+                let navigation = sut.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
+                sut.navigationDelegate?.webView?(sut, didFailProvisionalNavigation: navigation, withError: TestError.didFailProvisionalNavigation)
+            }
+        }
     }
 }
 
 enum TestError: Error {
     case didFailNavigation
+    case didFailProvisionalNavigation
 }
