@@ -117,6 +117,13 @@ class RxWebKitTests: QuickSpec {
                 sut.navigationDelegate?.webView?(sut, didReceive: challenge, completionHandler: { (_, _) in })
             }
         }
+        
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .decidePolicyNavigationAction) {
+                let delegate:WKNavigationDelegate? = sut.navigationDelegate
+                delegate?.webView?(sut, decidePolicyFor: WKNavigationAction(), decisionHandler: { (_) in })
+            }
+        }
     }
 }
 
