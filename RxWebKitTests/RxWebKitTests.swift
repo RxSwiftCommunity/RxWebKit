@@ -105,6 +105,18 @@ class RxWebKitTests: QuickSpec {
                 sut.navigationDelegate?.webView?(sut, didFailProvisionalNavigation: navigation, withError: TestError.didFailProvisionalNavigation)
             }
         }
+        
+        itBehavesLike(ForwardsEventsBehavior.self) {
+            ForwardsEventsBehaviorContext(sut, scheduler, .didReceiveChallenge) {
+                let protectionSpace = URLProtectionSpace(host: "fake", port: 8443, protocol: nil, realm: nil, authenticationMethod: nil)
+                let credential = URLCredential(user: "bad-user", password: "bad-password", persistence: URLCredential.Persistence.forSession)
+                let sender = MockURLAuthenticationChallengeSender()
+                
+                let challenge = URLAuthenticationChallenge(protectionSpace: protectionSpace, proposedCredential: credential, previousFailureCount: 0, failureResponse:nil, error: TestError.didReceiveChallenge, sender: sender)
+                
+                sut.navigationDelegate?.webView?(sut, didReceive: challenge, completionHandler: { (_, _) in })
+            }
+        }
     }
 }
 
