@@ -111,4 +111,18 @@ class RxWebKitTests: QuickSpec {
 enum TestError: Error {
     case didFailNavigation
     case didFailProvisionalNavigation
+    case didReceiveChallenge
+}
+
+@objc class MockURLAuthenticationChallengeSender: NSObject, URLAuthenticationChallengeSender {
+    override func `self`() -> Self {
+        return self
+    }
+    
+    override init() {}
+    func use(_ credential: URLCredential, for challenge: URLAuthenticationChallenge) { }
+    
+    func continueWithoutCredential(for challenge: URLAuthenticationChallenge) {}
+    
+    func cancel(_ challenge: URLAuthenticationChallenge) { }
 }
