@@ -120,12 +120,12 @@
 		C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
 		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
+		C4A50F9E229AF3EF0037E608 /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = config.yml; path = .circleci/config.yml; sourceTree = SOURCE_ROOT; };
 		C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
 		C4CA6B15228D752C0088A7A3 /* RxWebKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RxWebKit.podspec; sourceTree = SOURCE_ROOT; };
 		C4CA6B16228D75410088A7A3 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
 		C4CA6B17228D75420088A7A3 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
 		C4CA6B18228D75420088A7A3 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		C4CA6B1A228D84120088A7A3 /* circle.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = circle.yml; path = .circleci/circle.yml; sourceTree = SOURCE_ROOT; };
 		C4CB7D4322874E5600FB8D99 /* RxWebKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxWebKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CB7D4722874E5600FB8D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWebKitTests.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 				C4CA6B18228D75420088A7A3 /* Cartfile */,
 				C4CA6B16228D75410088A7A3 /* Cartfile.private */,
 				C4CA6B17228D75420088A7A3 /* Cartfile.resolved */,
-				C4CA6B1A228D84120088A7A3 /* circle.yml */,
+				C4A50F9E229AF3EF0037E608 /* config.yml */,
 				42B12EFB1C6DFC7600C280BD /* Sources */,
 				42F426D21C6623C5001FED46 /* Info.plist */,
 				42F426D01C6623C5001FED46 /* RxWebKit.h */,
