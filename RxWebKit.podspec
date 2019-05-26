@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
                     }
   s.source       = { :git => "https://github.com/RxSwiftCommunity/RxWebKit.git", :tag => s.version.to_s }
   s.source_files  = "RxWebKit/Sources/**/*.{swift}"
-  s.exclude_files = "RxWebKit/Sources/*.{plist}",  "RxWebKit/Sources/**/*.{plist}", "RxWebKit/*.{plist}",
+  s.exclude_files = "RxWebKit/Sources/**/*.{plist}"
   s.ios.deployment_target = '8.0'
   s.swift_version = '5.0'
   s.dependency 'RxSwift', '~> 5.0'
