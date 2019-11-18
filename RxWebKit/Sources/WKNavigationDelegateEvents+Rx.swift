@@ -42,19 +42,6 @@ extension Reactive where Base: WKWebView {
     public typealias ActionHandler = (WKNavigationActionPolicy) -> Void
     /// WKNavigationActionPolicyEvent emits a tuple event of  WKWebView + WKNavigationAction + ActionHandler
     public typealias WKNavigationActionPolicyEvent = ( webView: WKWebView, action: WKNavigationAction, handler: ActionHandler)
-
-    private func navigationEventWith(_ arg: [Any]) throws -> WKNavigationEvent {
-        let view = try castOrThrow(WKWebView.self, arg[0])
-        let nav = try castOrThrow(WKNavigation.self, arg[1])
-        return (view, nav)
-    }
-    
-    private func navigationFailEventWith(_ arg: [Any]) throws -> WKNavigationFailEvent {
-        let view = try castOrThrow(WKWebView.self, arg[0])
-        let nav = try castOrThrow(WKNavigation.self, arg[1])
-        let error = try castOrThrow(Swift.Error.self, arg[2])
-        return (view, nav, error)
-    }
     
     /// Reactive wrapper for `navigationDelegate`.
     public var delegate: DelegateProxy<WKWebView, WKNavigationDelegate> {
@@ -65,7 +52,11 @@ extension Reactive where Base: WKWebView {
     public var didCommitNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
             .methodInvoked(.didCommitNavigation)
-            .map(navigationEventWith)
+            .map { arg in
+                let view = try castOrThrow(WKWebView.self, arg[0])
+                let nav = try castOrThrow(WKNavigation.self, arg[1])
+                return (view, nav)
+            }
         return ControlEvent(events: source)
     }
     
@@ -73,7 +64,11 @@ extension Reactive where Base: WKWebView {
     public var didStartProvisionalNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
             .methodInvoked(.didStartProvisionalNavigation)
-            .map(navigationEventWith)
+            .map { arg in
+                let view = try castOrThrow(WKWebView.self, arg[0])
+                let nav = try castOrThrow(WKNavigation.self, arg[1])
+                return (view, nav)
+            }
         return ControlEvent(events: source)
     }
     
@@ -81,7 +76,11 @@ extension Reactive where Base: WKWebView {
     public var didFinishNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
             .methodInvoked(.didFinishNavigation)
-            .map(navigationEventWith)
+            .map { arg in
+                let view = try castOrThrow(WKWebView.self, arg[0])
+                let nav = try castOrThrow(WKNavigation.self, arg[1])
+                return (view, nav)
+            }
         return ControlEvent(events: source)
     }
     
@@ -98,7 +97,11 @@ extension Reactive where Base: WKWebView {
     public var didReceiveServerRedirectForProvisionalNavigation: ControlEvent<WKNavigationEvent> {
         let source: Observable<WKNavigationEvent> = delegate
             .methodInvoked(.didReceiveServerRedirectForProvisionalNavigation)
-            .map(navigationEventWith)
+            .map { arg in
+                let view = try castOrThrow(WKWebView.self, arg[0])
+                let nav = try castOrThrow(WKNavigation.self, arg[1])
+                return (view, nav)
+            }
         return ControlEvent(events: source)
     }
     
@@ -106,7 +109,12 @@ extension Reactive where Base: WKWebView {
     public var didFailNavigation: ControlEvent<WKNavigationFailEvent> {
         let source: Observable<WKNavigationFailEvent> = delegate
             .methodInvoked(.didFailNavigation)
-            .map(navigationFailEventWith)
+            .map { arg in
+                let view = try castOrThrow(WKWebView.self, arg[0])
+                let nav = try castOrThrow(WKNavigation.self, arg[1])
+                let error = try castOrThrow(Swift.Error.self, arg[2])
+                return (view, nav, error)
+            }
         return ControlEvent(events: source)
     }
     
@@ -114,7 +122,12 @@ extension Reactive where Base: WKWebView {
     public var didFailProvisionalNavigation: ControlEvent<WKNavigationFailEvent> {
         let source: Observable<WKNavigationFailEvent> = delegate
             .methodInvoked(.didFailProvisionalNavigation)
-            .map(navigationFailEventWith)
+            .map { arg in
+                let view = try castOrThrow(WKWebView.self, arg[0])
+                let nav = try castOrThrow(WKNavigation.self, arg[1])
+                let error = try castOrThrow(Swift.Error.self, arg[2])
+                return (view, nav, error)
+            }
         return ControlEvent(events: source)
     }
     
