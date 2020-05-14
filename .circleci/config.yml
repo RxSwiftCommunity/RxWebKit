@@ -37,7 +37,7 @@ jobs:
           command: >
                    set -o pipefail && xcodebuild test SWIFT_VERSION=5.0
                    -workspace RxWebKit.xcworkspace
-                   -scheme 'RxWebKitTests' -sdk iphonesimulator
+                   -scheme 'RxWebKitTests-iOS' -sdk iphonesimulator
                    -destination "name=iPhone Xʀ" | xcpretty -c --test
       - store_artifacts:
           path: /tmp/xcode-test-results
