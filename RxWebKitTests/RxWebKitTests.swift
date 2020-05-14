@@ -1,4 +1,3 @@
-import UIKit
 import WebKit
 import Quick
 import Nimble

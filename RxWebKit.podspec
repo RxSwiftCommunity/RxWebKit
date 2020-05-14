@@ -37,6 +37,7 @@ Pod::Spec.new do |s|
   s.source_files  = "RxWebKit/Sources/**/*.{swift}"
   s.exclude_files = "RxWebKit/Sources/**/*.{plist}"
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.13'
   s.swift_version = '5.0'
   s.dependency 'RxSwift', '~> 5.0'
   s.dependency 'RxCocoa', '~> 5.0'
