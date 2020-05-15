@@ -9,7 +9,7 @@ jobs:
       XCODE_TEST_REPORTS: /tmp/xcode-test-results
       LANG: en_US.UTF-8
     macos:
-      xcode: '10.2.0'
+      xcode: '11.4.1'
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS $XCODE_TEST_REPORTS
@@ -28,17 +28,17 @@ jobs:
       - run:
           name: Build (Swift 5.0)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.0
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.2.2
                    -workspace RxWebKit.xcworkspace
                    -scheme 'RxWebKit' -sdk iphonesimulator
-                   -destination "name=iPhone Xʀ" | xcpretty -c
+                   -destination "name=iPhone 11" | xcpretty -c
       - run:
           name: Run Tests (Swift 5.0)
           command: >
-                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.0
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.2.2
                    -workspace RxWebKit.xcworkspace
-                   -scheme 'RxWebKitTests' -sdk iphonesimulator
-                   -destination "name=iPhone Xʀ" | xcpretty -c --test
+                   -scheme 'RxWebKitTests-iOS' -sdk iphonesimulator
+                   -destination "name=iPhone 11" | xcpretty -c --test
       - store_artifacts:
           path: /tmp/xcode-test-results
 workflows:
