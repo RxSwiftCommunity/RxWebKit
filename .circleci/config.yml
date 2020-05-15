@@ -28,17 +28,17 @@ jobs:
       - run:
           name: Build (Swift 5.0)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.0
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.2.2
                    -workspace RxWebKit.xcworkspace
                    -scheme 'RxWebKit' -sdk iphonesimulator
-                   -destination "name=iPhone Xʀ" | xcpretty -c
+                   -destination "name=iPhone 11" | xcpretty -c
       - run:
           name: Run Tests (Swift 5.0)
           command: >
-                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.0
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.2.2
                    -workspace RxWebKit.xcworkspace
                    -scheme 'RxWebKitTests-iOS' -sdk iphonesimulator
-                   -destination "name=iPhone Xʀ" | xcpretty -c --test
+                   -destination "name=iPhone 11" | xcpretty -c --test
       - store_artifacts:
           path: /tmp/xcode-test-results
 workflows:
