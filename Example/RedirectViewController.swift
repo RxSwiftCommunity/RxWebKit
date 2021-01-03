@@ -24,7 +24,7 @@ class RedirectViewController: UIViewController {
         
         wkWebView.rx
             .didReceiveServerRedirectForProvisionalNavigation
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .debug("didReceiveServerRedirectForProvisionalNavigation")
             .subscribe(onNext: { [weak self] webView, navigation in
                 guard let self = self else { return }

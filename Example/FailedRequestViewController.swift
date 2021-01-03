@@ -23,7 +23,7 @@ class FailedRequestViewController: UIViewController {
         
         wkWebView.rx
             .didFailProvisionalNavigation
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .debug("didFailProvisionalNavigation")
             .subscribe(onNext: { [weak self] webView, navigation, error in
                 guard let self = self else { return }
