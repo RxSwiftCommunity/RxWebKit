@@ -1,0 +1,18 @@
+source "https://cdn.cocoapods.org/"
+project "RxWebKitDemo.xcodeproj"
+use_frameworks!
+
+def common
+  pod "RxWebKit", :path => "../"
+end
+
+def common_tests
+  pod "Quick", "~> 9.0"
+  pod "Nimble", "~> 3.0"
+  pod "RxBlocking", "~> 6.0"
+end
+
+target "RxWebKitDemo-iOS" do
+  platform :ios, "10.0"
+  common
+end

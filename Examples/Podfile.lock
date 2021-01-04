@@ -1,0 +1,33 @@
+PODS:
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
+  - RxWebKit (1.1.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+
+DEPENDENCIES:
+  - RxWebKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+EXTERNAL SOURCES:
+  RxWebKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
+  RxWebKit: b971c1d83fdc0913424ec18ef7fbbad91c3a5c2f
+
+PODFILE CHECKSUM: 852151a70deb8d90140075b27d0598972dd88792
+
+COCOAPODS: 1.10.0

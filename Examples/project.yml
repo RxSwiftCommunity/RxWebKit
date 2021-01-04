@@ -1,0 +1,46 @@
+name: RxWebKitDemo
+options:
+  minimumXcodeGenVersion: "2.15.1"
+  developmentLanguage: en
+  usesTabs: false
+  indentWidth: 2
+  tabWidth: 2
+  xcodeVersion: "1140"
+  deploymentTarget:
+    iOS: "10.0"
+  defaultConfig: "Release"
+configs:
+  Debug: debug
+  Release: release
+attributes:
+  ORGANIZATIONNAME: RxSwiftCommunity
+schemes:
+  RxWebKitDemo-iOS:
+    scheme: {}
+    build:
+      parallelizeBuild: true
+      buildImplicitDependencies: true
+      targets:
+        RxWebKitDemo-iOS: all
+    run:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+      revealArchiveInOrganizer: true
+targets:
+  RxWebKitDemo-iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "10.0"
+    sources: [RxWebKitDemo-iOS]
+    settings:
+      INFOPLIST_FILE: RxWebKitDemo-iOS/Info.plist
+      PRODUCT_NAME: RxWebKitDemo-iOS
+      OTHER_LDFLAGS: -ObjC
+      PRODUCT_BUNDLE_IDENTIFIER: RxSwiftCommunity.RxWebKit.iOSDemo
+      ASSETCATALOG_COMPILER_APPICON_NAME: $(APP_ICON_NAME)
+      DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
