@@ -1,12 +1,14 @@
-#!/usr/bin/env bash
-
 set -euo pipefail
+rm -rf RxWebKit-SPM.xcodeproj
 rm -rf xcarchives/*
 rm -rf RxWebKit.xcframework.zip
+rm -rf RxWebKit.xcframework
 
-xcodebuild archive -quiet -project RxWebKit-SPM.xcodeproj -scheme "RxWebKit iOS" -sdk iphoneos -archivePath "xcarchives/RxWebKit-iOS"
-xcodebuild archive -quiet -project RxWebKit-SPM.xcodeproj -scheme "RxWebKit iOS" -sdk iphonesimulator  -archivePath "xcarchives/RxWebKit-iOS-Simulator"
-xcodebuild archive -quiet -project RxWebKit-SPM.xcodeproj -scheme "RxWebKit macOS" -sdk macosx -archivePath "xcarchives/RxWebKit-macOS"
+xcodegen --spec project-spm.yml
+
+xcodebuild archive -quiet -project RxWebKit-SPM.xcodeproj -configuration Release -scheme "RxWebKit iOS" -destination "generic/platform=iOS" -archivePath "xcarchives/RxWebKit-iOS" SKIP_INSTALL=NO SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES OTHER_CFLAGS="-fembed-bitcode" BITCODE_GENERATION_MODE="bitcode" ENABLE_BITCODE=YES | xcpretty --color --simple
+xcodebuild archive -quiet -project RxWebKit-SPM.xcodeproj -configuration Release -scheme "RxWebKit iOS" -destination "generic/platform=iOS Simulator" -archivePath "xcarchives/RxWebKit-iOS-Simulator" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES OTHER_CFLAGS="-fembed-bitcode" BITCODE_GENERATION_MODE="bitcode" ENABLE_BITCODE=YES | xcpretty --color --simple
+xcodebuild archive -quiet -project RxWebKit-SPM.xcodeproj -configuration Release -scheme "RxWebKit macOS" -destination "generic/platform=macOS" -archivePath "xcarchives/RxWebKit-macOS" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES OTHER_CFLAGS="-fembed-bitcode" BITCODE_GENERATION_MODE="bitcode" ENABLE_BITCODE=YES | xcpretty --color --simple
 
 xcodebuild -create-xcframework \
 -framework "xcarchives/RxWebKit-iOS-Simulator.xcarchive/Products/Library/Frameworks/RxWebKit.framework" \
@@ -20,3 +22,4 @@ xcodebuild -create-xcframework \
 zip -r RxWebKit.xcframework.zip RxWebKit.xcframework
 rm -rf xcarchives/*
 rm -rf RxWebKit.xcframework
+rm -rf RxWebKit-SPM.xcodeproj
