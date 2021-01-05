@@ -1,0 +1,5 @@
+output: ../docs/RxWebKit
+module: RxWebKit
+xcodebuild_arguments: 
+  - -scheme
+  - RxWebKit iOS
