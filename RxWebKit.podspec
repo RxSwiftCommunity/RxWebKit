@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   DESC
   s.homepage = "https://github.com/RxSwiftCommunity/RxWebKit"
   s.authors = { "RxSwift Community" => "community@rxswift.org" }
-  s.source = { :git => "https://github.com/RxSwiftCommunity/RxWebKit.git", :tag => s.version.to_s }
+  s.source = { :git => "https://github.com/RxSwiftCommunity/RxWebKit.git", :tag => "v" + s.version.to_s }
   s.swift_version = "5.1"
 
   s.ios.deployment_target = "9.0"
