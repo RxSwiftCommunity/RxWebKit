@@ -43,14 +43,18 @@ class InvokeJSFunctionViewController : UIViewController {
         super.viewDidLoad()
         view.addSubview(webview)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Invoke", style: .plain, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem?.rx.tap.bind { [weak self] in
-            guard let self = self else { return }
-            self.webview.rx.evaluateJavaScript("presentAlert()").observeOn(MainScheduler.asyncInstance).subscribe { event in
-                if case .next(let body) = event, let message = body as? String {
-                    print(message)
-                }
-            }.disposed(by: self.bag)
-        }.disposed(by: self.bag)
+        self.navigationItem.rightBarButtonItem?.rx.tap
+            .bind { [weak self] in
+                guard let self = self else { return }
+                self.webview.rx.evaluateJavaScript("presentAlert()")
+                    .observe(on: MainScheduler.asyncInstance)
+                    .subscribe { event in
+                        if case .next(let body) = event, let message = body as? String {
+                            print(message)
+                        }
+                    }.disposed(by: self.bag)
+            }
+            .disposed(by: self.bag)
         webview.loadHTMLString(html, baseURL: nil)
     }
     

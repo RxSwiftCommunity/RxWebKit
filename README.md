@@ -59,7 +59,7 @@ $(SRCROOT)/carthage/Build/iOS/RxWebKit.framework
 
 ## Requirements
 
-RxWebKit requires Swift 5.2.2 and dedicated versions of RxSwift 5.1.1
+RxWebKit requires Swift 5.2.2 and dedicated versions of RxSwift 6.0.0
 
 ## License
 
