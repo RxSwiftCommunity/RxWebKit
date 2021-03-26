@@ -5,15 +5,15 @@ import PackageDescription
 let package = Package(
     name: "RxWebKit",
     platforms: [
-        .iOS(.v8)
+        .iOS(.v12)
     ],
     products: [
         .library(name: "RxWebKit", targets: ["RxWebKit"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "5.0.0")),
-        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "2.2.0")),
-        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "8.0.0"))
+        .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "3.0.0")),
+        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "9.0.0"))
     ],
     targets: [
         .target(
@@ -23,7 +23,7 @@ let package = Package(
         ),
         .testTarget(
             name: "RxWebKitTests",
-            dependencies: ["RxWebKit", "Nimble", "Quick"],
+            dependencies: ["RxWebKit", "RxTest", "Nimble", "Quick"],
             path: "RxWebKitTests"
         )
     ],
