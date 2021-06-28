@@ -15,6 +15,7 @@
 		42F426D11C6623C5001FED46 /* RxWebKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F426D01C6623C5001FED46 /* RxWebKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
+		449905C02661474C00C6E514 /* JavaScriptTextInputPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449905BF2661474C00C6E514 /* JavaScriptTextInputPanelViewController.swift */; };
 		C4135FFE22875FBE0061933C /* RxWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */; };
 		C4136011228764840061933C /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B3228748A0004B05A5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4136012228764840061933C /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B2228748A0004B05A5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -138,6 +139,7 @@
 		42F426D01C6623C5001FED46 /* RxWebKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxWebKit.h; sourceTree = "<group>"; };
 		42F426D21C6623C5001FED46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+WebKit.swift"; sourceTree = "<group>"; };
+		449905BF2661474C00C6E514 /* JavaScriptTextInputPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptTextInputPanelViewController.swift; sourceTree = "<group>"; };
 		C41360162287651B0061933C /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		C41360192288135F0061933C /* HasEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEventsBehavior.swift; sourceTree = "<group>"; };
 		C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				42F426B41C66223E001FED46 /* ViewController.swift */,
 				C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */,
 				C4607FDC1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift */,
+				449905BF2661474C00C6E514 /* JavaScriptTextInputPanelViewController.swift */,
 				C4607FE01FA0F549002DA12F /* AuthChallengeViewController.swift */,
 				C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */,
 				C4878CD71FA117E900B12C60 /* RedirectViewController.swift */,
@@ -504,6 +507,7 @@
 				C4607FDD1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift in Sources */,
 				C4878CD61FA1066C00B12C60 /* FailedRequestViewController.swift in Sources */,
 				42F426B61C66223E001FED46 /* AppDelegate.swift in Sources */,
+				449905C02661474C00C6E514 /* JavaScriptTextInputPanelViewController.swift in Sources */,
 				C4607FDB1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

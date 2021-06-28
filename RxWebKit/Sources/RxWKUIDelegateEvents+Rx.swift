@@ -16,6 +16,7 @@ import WebKit
 extension Reactive where Base: WKWebView {
     public typealias JSAlertEvent = (webView: WKWebView, message: String, frame: WKFrameInfo, handler: () -> ())
     public typealias JSConfirmEvent = (webView: WKWebView, message: String, frame: WKFrameInfo, handler: (Bool) -> ())
+    public typealias JSTextInputEvent = (webView: WKWebView, prompt: String, defaultText: String?, frame: WKFrameInfo, handler: (String?) -> ())
     #if os(iOS)
         public typealias CommitPreviewEvent = (webView: WKWebView, controller: UIViewController)
     #endif
@@ -67,6 +68,28 @@ extension Reactive where Base: WKWebView {
         return ControlEvent(events: source)
     }
     
+    /// Reactive wrapper for `func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Swift.Void)`
+    public var javaScriptTextInputPanel: ControlEvent<JSTextInputEvent> {
+        typealias __CompletionHandler = @convention(block) (String?) -> ()
+        let source:Observable<JSTextInputEvent> = uiDelegate
+            .methodInvoked(.jsTextInput).map { args in
+                let view = try castOrThrow(WKWebView.self, args[0])
+                let prompt = try castOrThrow(String.self, args[1])
+                let defaultText = try castOrThrow(String?.self, args[2])
+                let frame = try castOrThrow(WKFrameInfo.self, args[3])
+                var closureObject: AnyObject? = nil
+                var mutableArgs = args
+                mutableArgs.withUnsafeMutableBufferPointer { ptr in
+                    closureObject = ptr[4] as AnyObject
+                }
+                let __completionBlockPtr = UnsafeRawPointer(Unmanaged<AnyObject>.passUnretained(closureObject as AnyObject).toOpaque())
+                let handler = unsafeBitCast(__completionBlockPtr, to: __CompletionHandler.self)
+                return (view, prompt, defaultText, frame, handler)
+        }
+        
+        return ControlEvent(events: source)
+    }
+    
     #if os(iOS)
         /// Reactive wrappper for `func webView(_ webView: WKWebView, commitPreviewingViewController previewingViewController: UIViewController)`
         @available(iOS 10.0, *)
@@ -87,6 +110,7 @@ extension Reactive where Base: WKWebView {
 fileprivate extension Selector {
     static let jsAlert = #selector(WKUIDelegate.webView(_:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:))
     static let jsConfirm = #selector(WKUIDelegate.webView(_:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:))
+    static let jsTextInput = #selector(WKUIDelegate.webView(_:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:))
     
     #if os(iOS)
         @available(iOS 10.0, *)
