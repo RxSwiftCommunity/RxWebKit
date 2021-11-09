@@ -28,14 +28,14 @@ jobs:
       - run:
           name: Build (Swift 5.0)
           command: >
-                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.2.2
+                   set -o pipefail && xcodebuild build SWIFT_VERSION=5.5
                    -workspace RxWebKit.xcworkspace
                    -scheme 'RxWebKit' -sdk iphonesimulator
                    -destination "name=iPhone 11" | xcpretty -c
       - run:
           name: Run Tests (Swift 5.0)
           command: >
-                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.2.2
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.5
                    -workspace RxWebKit.xcworkspace
                    -scheme 'RxWebKitTests-iOS' -sdk iphonesimulator
                    -destination "name=iPhone 11" | xcpretty -c --test
