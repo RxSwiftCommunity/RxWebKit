@@ -20,7 +20,10 @@ jobs:
             - v1-dep-
       - run:
           name: Bootstrap Carthage
-          command: carthage update --use-xcframeworks
+          command: |
+            brew update
+            brew upgrade carthage
+            carthage update --use-xcframeworks
       - save_cache:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
