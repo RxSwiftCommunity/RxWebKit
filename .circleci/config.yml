@@ -23,7 +23,7 @@ jobs:
           command: |
             brew update
             brew upgrade carthage
-            carthage bootstrap --use-xcframeworks
+            carthage update --use-xcframeworks
       - save_cache:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
