@@ -23,7 +23,7 @@ jobs:
           command: |
             brew update
             brew upgrade carthage
-            carthage update --use-xcframeworks
+            carthage bootstrap --use-xcframeworks
       - save_cache:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
@@ -36,12 +36,33 @@ jobs:
                    -scheme 'RxWebKit' -sdk iphonesimulator
                    -destination "name=iPhone 11" | xcpretty -c
       - run:
+          name: Build macOS (Swift 5.0)
+          command: |
+                    set -o pipefail && xcodebuild build SWIFT_VERSION=5.5.1 
+                    -workspace RxWebKit.xcworkspace
+                    -scheme RxWebKit -sdk macosx 
+                    -destination "arch=x86_64" | xcpretty -c
+      - run:
+          name: Build iOS (Swift 5.0)
+          command: |
+                    set -o pipefail && xcodebuild build SWIFT_VERSION=5.5.1 
+                    -workspace RxWebKit.xcworkspace
+                    -scheme RxWebKit -sdk iphonesimulator 
+                    -destination "name=iPhone 12" | xcpretty -c
+      - run:
+          name: Build tvOS (Swift 5.0)
+          command: |
+                    set -o pipefail && xcodebuild build SWIFT_VERSION=5.5.1 
+                    -workspace RxWebKit.xcworkspace
+                    -scheme RxWebKit -sdk appletvsimulator 
+                    -destination "name=Apple TV 4K (at 1080p)" | xcpretty -c
+      - run:
           name: Run Tests (Swift 5.0)
           command: >
-                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.5
+                   set -o pipefail && xcodebuild test SWIFT_VERSION=5.5.1
                    -workspace RxWebKit.xcworkspace
                    -scheme 'RxWebKitTests-iOS' -sdk iphonesimulator
-                   -destination "name=iPhone 11" | xcpretty -c --test
+                   -destination "name=iPhone 12" | xcpretty -c --test
       - store_artifacts:
           path: /tmp/xcode-test-results
 workflows:
@@ -52,3 +73,4 @@ workflows:
           filters:
             tags:
               ignore: /[0-9]+(\.[0-9]+)*/
+              
