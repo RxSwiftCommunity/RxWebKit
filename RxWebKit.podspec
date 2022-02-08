@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxWebKit"
-  s.version      = "2.0.0"
+  s.version      = "2.0.1"
   s.summary      = "RxWebKit is a RxSwift wrapper for WebKit."
   s.description  = <<-DESC
   RxWebKit is a RxSwift wrapper for `WebKit`.
@@ -34,8 +34,8 @@ Pod::Spec.new do |s|
                       "RxSwift Community" => "community@rxswift.org"
                     }
   s.source       = { :git => "https://github.com/RxSwiftCommunity/RxWebKit.git", :tag => s.version.to_s }
-  s.source_files  = "RxWebKit/Sources/**/*.{swift}"
-  s.exclude_files = "RxWebKit/Sources/**/*.{plist}"
+  s.source_files  = "Sources/RxWebKit/**/*.{swift}"
+  s.exclude_files = "Sources/RxWebKit/**/*.{plist}"
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.13'
   s.swift_version = '5.0'
