@@ -34,7 +34,6 @@
 		C4878CD61FA1066C00B12C60 /* FailedRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */; };
 		C4878CD81FA117E900B12C60 /* RedirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD71FA117E900B12C60 /* RedirectViewController.swift */; };
 		C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */; };
-		C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
 		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
 		C4CA6B07228AB1680088A7A3 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */; };
 		EFC27F84246D7E9C0093D8B3 /* RxWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */; };
@@ -148,7 +147,6 @@
 		C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedRequestViewController.swift; sourceTree = "<group>"; };
 		C4878CD71FA117E900B12C60 /* RedirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectViewController.swift; sourceTree = "<group>"; };
 		C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
-		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
 		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4A50F9E229AF3EF0037E608 /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = config.yml; path = .circleci/config.yml; sourceTree = SOURCE_ROOT; };
 		C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 			children = (
 				42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */,
 				C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */,
-				C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */,
 				C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */,
 				C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */,
 				F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */,
@@ -514,7 +511,6 @@
 			files = (
 				42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */,
 				C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */,
-				C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */,
 				C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */,
 				F6D7DD0D224F62860066C90F /* RxWKUserContentController.swift in Sources */,
 				C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */,

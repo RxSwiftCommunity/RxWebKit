@@ -43,14 +43,9 @@ extension Reactive where Base: WKWebView {
     /// WKNavigationActionPolicyEvent emits a tuple event of  WKWebView + WKNavigationAction + ActionHandler
     public typealias WKNavigationActionPolicyEvent = ( webView: WKWebView, action: WKNavigationAction, handler: ActionHandler)
     
-    /// Reactive wrapper for `navigationDelegate`.
-    public var delegate: DelegateProxy<WKWebView, WKNavigationDelegate> {
-        return RxWKNavigationDelegateProxy.proxy(for: base)
-    }
-    
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didCommit navigation: WKNavigation!)`.
     public var didCommitNavigation: ControlEvent<WKNavigationEvent> {
-        let source: Observable<WKNavigationEvent> = delegate
+        let source: Observable<WKNavigationEvent> = navigationDelegate
             .methodInvoked(.didCommitNavigation)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
@@ -62,7 +57,7 @@ extension Reactive where Base: WKWebView {
     
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)`.
     public var didStartProvisionalNavigation: ControlEvent<WKNavigationEvent> {
-        let source: Observable<WKNavigationEvent> = delegate
+        let source: Observable<WKNavigationEvent> = navigationDelegate
             .methodInvoked(.didStartProvisionalNavigation)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
@@ -74,7 +69,7 @@ extension Reactive where Base: WKWebView {
     
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didFinish navigation: WKNavigation!)`
     public var didFinishNavigation: ControlEvent<WKNavigationEvent> {
-        let source: Observable<WKNavigationEvent> = delegate
+        let source: Observable<WKNavigationEvent> = navigationDelegate
             .methodInvoked(.didFinishNavigation)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
@@ -87,7 +82,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for delegate method `webViewWebContentProcessDidTerminate(_ webView: WKWebView)`.
     @available(iOS 9.0, *)
     public var didTerminate: ControlEvent<WKWebView> {
-        let source: Observable<WKWebView> = delegate
+        let source: Observable<WKWebView> = navigationDelegate
             .methodInvoked(.didTerminate)
             .map { try castOrThrow(WKWebView.self, $0[0]) }
         return ControlEvent(events: source)
@@ -95,7 +90,7 @@ extension Reactive where Base: WKWebView {
     
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!)`.
     public var didReceiveServerRedirectForProvisionalNavigation: ControlEvent<WKNavigationEvent> {
-        let source: Observable<WKNavigationEvent> = delegate
+        let source: Observable<WKNavigationEvent> = navigationDelegate
             .methodInvoked(.didReceiveServerRedirectForProvisionalNavigation)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
@@ -107,7 +102,7 @@ extension Reactive where Base: WKWebView {
     
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error)`.
     public var didFailNavigation: ControlEvent<WKNavigationFailEvent> {
-        let source: Observable<WKNavigationFailEvent> = delegate
+        let source: Observable<WKNavigationFailEvent> = navigationDelegate
             .methodInvoked(.didFailNavigation)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
@@ -120,7 +115,7 @@ extension Reactive where Base: WKWebView {
     
     /// Reactive wrapper for delegate method `webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error)`.
     public var didFailProvisionalNavigation: ControlEvent<WKNavigationFailEvent> {
-        let source: Observable<WKNavigationFailEvent> = delegate
+        let source: Observable<WKNavigationFailEvent> = navigationDelegate
             .methodInvoked(.didFailProvisionalNavigation)
             .map { arg in
                 let view = try castOrThrow(WKWebView.self, arg[0])
@@ -148,7 +143,7 @@ extension Reactive where Base: WKWebView {
          credential.
          @discussion If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
          */
-        let source: Observable<WKNavigationChallengeEvent> = delegate
+        let source: Observable<WKNavigationChallengeEvent> = navigationDelegate
             .sentMessage(.didReceiveChallenge)
             .map { arg in
                 /// Extracting the WKWebView from the array at index zero
@@ -205,7 +200,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for `func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Swift.Void)`
     public var decidePolicyNavigationResponse: ControlEvent<WKNavigationResponsePolicyEvent> {
         typealias __DecisionHandler = @convention(block) (WKNavigationResponsePolicy) -> ()
-        let source:Observable<WKNavigationResponsePolicyEvent> = delegate
+        let source:Observable<WKNavigationResponsePolicyEvent> = navigationDelegate
             .methodInvoked(.decidePolicyNavigationResponse).map { args in
                 let view = try castOrThrow(WKWebView.self, args[0])
                 let response = try castOrThrow(WKNavigationResponse.self, args[1])
@@ -225,7 +220,7 @@ extension Reactive where Base: WKWebView {
     /// Reactive wrapper for `func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void)`
     public var decidePolicyNavigationAction: ControlEvent<WKNavigationActionPolicyEvent> {
         typealias __ActionHandler = @convention(block) (WKNavigationActionPolicy) -> ()
-        let source:Observable<WKNavigationActionPolicyEvent> = delegate
+        let source:Observable<WKNavigationActionPolicyEvent> = navigationDelegate
             .methodInvoked(.decidePolicyNavigationAction).map { args in
                 let view = try castOrThrow(WKWebView.self, args[0])
                 let action = try castOrThrow(WKNavigationAction.self, args[1])
