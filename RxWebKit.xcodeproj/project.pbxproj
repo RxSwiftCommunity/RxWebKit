@@ -216,7 +216,8 @@
 				C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */,
 				F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */,
 			);
-			path = Sources;
+			name = Sources;
+			path = ../Sources/RxWebKit;
 			sourceTree = "<group>";
 		};
 		42F4268E1C66200D001FED46 = {
