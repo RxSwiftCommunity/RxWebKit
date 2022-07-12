@@ -47,7 +47,7 @@ class ForwardsEventsBehavior: Quick.Behavior<ForwardsEventsBehaviorContext> {
         describe("Has Events Behavior") {
             it("sentMessage") {
                 SharingScheduler.mock(scheduler: scheduler) {
-                    let sentMessage = scheduler.record(source: sut.rx.delegate.sentMessage(selector))
+                    let sentMessage = scheduler.record(source: sut.rx.navigationDelegate.sentMessage(selector))
                     invoked()
                     scheduler.start()
                     expect(sentMessage.events.count).to(equal(1))
@@ -56,7 +56,7 @@ class ForwardsEventsBehavior: Quick.Behavior<ForwardsEventsBehaviorContext> {
             
             it("methodInvoke") {
                 SharingScheduler.mock(scheduler: scheduler) {
-                    let methodInvoked = scheduler.record(source: sut.rx.delegate.methodInvoked(selector))
+                    let methodInvoked = scheduler.record(source: sut.rx.navigationDelegate.methodInvoked(selector))
                     invoked()
                     scheduler.start()
                     expect(methodInvoked.events.count).to(equal(1))
