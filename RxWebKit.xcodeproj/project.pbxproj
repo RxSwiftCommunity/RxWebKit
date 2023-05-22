@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		193996B62A0A169E008A8F9E /* RxWebKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 193996AD2A0A169E008A8F9E /* RxWebKit.h */; };
+		193996B82A0A169E008A8F9E /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193996B02A0A169E008A8F9E /* WKNavigationDelegateEvents+Rx.swift */; };
+		193996B92A0A169E008A8F9E /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193996B12A0A169E008A8F9E /* RxWKNavigationDelegateProxy.swift */; };
+		193996BA2A0A169E008A8F9E /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193996B22A0A169E008A8F9E /* RxWKUIDelegateProxy.swift */; };
+		193996BB2A0A169E008A8F9E /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193996B32A0A169E008A8F9E /* Rx+WebKit.swift */; };
+		193996BC2A0A169E008A8F9E /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193996B42A0A169E008A8F9E /* RxWKUIDelegateEvents+Rx.swift */; };
+		193996BD2A0A169E008A8F9E /* RxWKUserContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193996B52A0A169E008A8F9E /* RxWKUserContentController.swift */; };
 		42F426B61C66223E001FED46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426AD1C66223E001FED46 /* AppDelegate.swift */; };
 		42F426B71C66223E001FED46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F426AE1C66223E001FED46 /* Assets.xcassets */; };
 		42F426B81C66223E001FED46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F426B01C66223E001FED46 /* LaunchScreen.storyboard */; };
 		42F426B91C66223E001FED46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F426B21C66223E001FED46 /* Main.storyboard */; };
 		42F426BA1C66223E001FED46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426B41C66223E001FED46 /* ViewController.swift */; };
-		42F426D11C6623C5001FED46 /* RxWebKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 42F426D01C6623C5001FED46 /* RxWebKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42F426D61C6623C5001FED46 /* RxWebKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42F426CE1C6623C5001FED46 /* RxWebKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */; };
 		C4135FFE22875FBE0061933C /* RxWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */; };
 		C4136011228764840061933C /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B3228748A0004B05A5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4136012228764840061933C /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4D323B2228748A0004B05A5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -26,16 +31,12 @@
 		C413602522896CC20061933C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205831C89E9DF00214DA1 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C413602622896CC20061933C /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 424205841C89E9DF00214DA1 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C413602722896CE20061933C /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C41360162287651B0061933C /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */; };
-		C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */; };
 		C4607FDB1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */; };
 		C4607FDD1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FDC1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift */; };
 		C4607FE11FA0F549002DA12F /* AuthChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4607FE01FA0F549002DA12F /* AuthChallengeViewController.swift */; };
 		C4878CD61FA1066C00B12C60 /* FailedRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */; };
 		C4878CD81FA117E900B12C60 /* RedirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD71FA117E900B12C60 /* RedirectViewController.swift */; };
 		C4878CDA1FA11B5A00B12C60 /* OtherRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */; };
-		C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */; };
-		C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */; };
 		C4CA6B07228AB1680088A7A3 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */; };
 		EFC27F84246D7E9C0093D8B3 /* RxWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB7D5322874EE700FB8D99 /* RxWebKitTests.swift */; };
 		EFC27F85246D7E9C0093D8B3 /* ForwardsEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */; };
@@ -48,7 +49,6 @@
 		EFC27FA0246D7F310093D8B3 /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFC27F9F246D7F300093D8B3 /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F68CEB9E22521B1D00498607 /* InvokeJSFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */; };
 		F68CEBA022521B2B00498607 /* ObservingJSEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68CEB9F22521B2B00498607 /* ObservingJSEventViewController.swift */; };
-		F6D7DD0D224F62860066C90F /* RxWKUserContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +125,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		193996AD2A0A169E008A8F9E /* RxWebKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RxWebKit.h; path = Sources/RxWebKit.h; sourceTree = SOURCE_ROOT; };
+		193996AE2A0A169E008A8F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
+		193996B02A0A169E008A8F9E /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
+		193996B12A0A169E008A8F9E /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
+		193996B22A0A169E008A8F9E /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
+		193996B32A0A169E008A8F9E /* Rx+WebKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+WebKit.swift"; sourceTree = "<group>"; };
+		193996B42A0A169E008A8F9E /* RxWKUIDelegateEvents+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxWKUIDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
+		193996B52A0A169E008A8F9E /* RxWKUserContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxWKUserContentController.swift; sourceTree = "<group>"; };
 		424205831C89E9DF00214DA1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		424205841C89E9DF00214DA1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		42F426971C66200D001FED46 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,21 +143,14 @@
 		42F426B31C66223E001FED46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42F426B41C66223E001FED46 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42F426CE1C6623C5001FED46 /* RxWebKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxWebKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42F426D01C6623C5001FED46 /* RxWebKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxWebKit.h; sourceTree = "<group>"; };
-		42F426D21C6623C5001FED46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+WebKit.swift"; sourceTree = "<group>"; };
 		C41360162287651B0061933C /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		C41360192288135F0061933C /* HasEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEventsBehavior.swift; sourceTree = "<group>"; };
-		C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUIDelegateProxy.swift; sourceTree = "<group>"; };
-		C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxWKUIDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4607FDA1FA0E68F002DA12F /* JavaScriptAlertPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptAlertPanelViewController.swift; sourceTree = "<group>"; };
 		C4607FDC1FA0F1D3002DA12F /* JavaScriptConfirmPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptConfirmPanelViewController.swift; sourceTree = "<group>"; };
 		C4607FE01FA0F549002DA12F /* AuthChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChallengeViewController.swift; sourceTree = "<group>"; };
 		C4878CD51FA1066C00B12C60 /* FailedRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedRequestViewController.swift; sourceTree = "<group>"; };
 		C4878CD71FA117E900B12C60 /* RedirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectViewController.swift; sourceTree = "<group>"; };
 		C4878CD91FA11B5A00B12C60 /* OtherRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherRequestViewController.swift; sourceTree = "<group>"; };
-		C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKNavigationDelegateProxy.swift; sourceTree = "<group>"; };
-		C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegateEvents+Rx.swift"; sourceTree = "<group>"; };
 		C4A50F9E229AF3EF0037E608 /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = config.yml; path = .circleci/config.yml; sourceTree = SOURCE_ROOT; };
 		C4CA6B06228AB1680088A7A3 /* ForwardsEventsBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardsEventsBehavior.swift; sourceTree = "<group>"; };
 		C4CA6B15228D752C0088A7A3 /* RxWebKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RxWebKit.podspec; sourceTree = SOURCE_ROOT; };
@@ -171,7 +172,6 @@
 		EFC27F9F246D7F300093D8B3 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
 		F68CEB9D22521B1D00498607 /* InvokeJSFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeJSFunctionViewController.swift; sourceTree = "<group>"; };
 		F68CEB9F22521B2B00498607 /* ObservingJSEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingJSEventViewController.swift; sourceTree = "<group>"; };
-		F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWKUserContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,15 +206,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193996AF2A0A169E008A8F9E /* RxWebKit */ = {
+			isa = PBXGroup;
+			children = (
+				193996B02A0A169E008A8F9E /* WKNavigationDelegateEvents+Rx.swift */,
+				193996B12A0A169E008A8F9E /* RxWKNavigationDelegateProxy.swift */,
+				193996B22A0A169E008A8F9E /* RxWKUIDelegateProxy.swift */,
+				193996B32A0A169E008A8F9E /* Rx+WebKit.swift */,
+				193996B42A0A169E008A8F9E /* RxWKUIDelegateEvents+Rx.swift */,
+				193996B52A0A169E008A8F9E /* RxWKUserContentController.swift */,
+			);
+			name = RxWebKit;
+			path = Sources/RxWebKit;
+			sourceTree = SOURCE_ROOT;
+		};
 		42B12EFB1C6DFC7600C280BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				42F426DB1C662CF9001FED46 /* Rx+WebKit.swift */,
-				C48E61831F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift */,
-				C48E617D1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift */,
-				C4607FCF1FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift */,
-				C4607FD51FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift */,
-				F6D7DD0C224F62860066C90F /* RxWKUserContentController.swift */,
+				193996AE2A0A169E008A8F9E /* Info.plist */,
+				193996AF2A0A169E008A8F9E /* RxWebKit */,
+				193996AD2A0A169E008A8F9E /* RxWebKit.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -285,8 +296,6 @@
 				C4CA6B17228D75420088A7A3 /* Cartfile.resolved */,
 				C4A50F9E229AF3EF0037E608 /* config.yml */,
 				42B12EFB1C6DFC7600C280BD /* Sources */,
-				42F426D21C6623C5001FED46 /* Info.plist */,
-				42F426D01C6623C5001FED46 /* RxWebKit.h */,
 			);
 			path = RxWebKit;
 			sourceTree = "<group>";
@@ -322,7 +331,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42F426D11C6623C5001FED46 /* RxWebKit.h in Headers */,
+				193996B62A0A169E008A8F9E /* RxWebKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,12 +521,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42F426DC1C662CF9001FED46 /* Rx+WebKit.swift in Sources */,
-				C48E61841F9E336000C6A753 /* WKNavigationDelegateEvents+Rx.swift in Sources */,
-				C48E617E1F9E27A700C6A753 /* RxWKNavigationDelegateProxy.swift in Sources */,
-				C4607FD01FA0DAC9002DA12F /* RxWKUIDelegateProxy.swift in Sources */,
-				F6D7DD0D224F62860066C90F /* RxWKUserContentController.swift in Sources */,
-				C4607FD61FA0DC40002DA12F /* RxWKUIDelegateEvents+Rx.swift in Sources */,
+				193996B82A0A169E008A8F9E /* WKNavigationDelegateEvents+Rx.swift in Sources */,
+				193996BB2A0A169E008A8F9E /* Rx+WebKit.swift in Sources */,
+				193996BA2A0A169E008A8F9E /* RxWKUIDelegateProxy.swift in Sources */,
+				193996B92A0A169E008A8F9E /* RxWKNavigationDelegateProxy.swift in Sources */,
+				193996BD2A0A169E008A8F9E /* RxWKUserContentController.swift in Sources */,
+				193996BC2A0A169E008A8F9E /* RxWKUIDelegateEvents+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -706,7 +715,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = "";
@@ -719,11 +728,13 @@
 		42F426AA1C66200D001FED46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -735,11 +746,13 @@
 		42F426AB1C66200D001FED46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -758,9 +771,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/RxWebKit/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.RxWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -783,9 +796,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/RxWebKit/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mokumoku.RxWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -801,6 +814,7 @@
 		C4CB7D4C22874E5600FB8D99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -831,6 +845,7 @@
 		C4CB7D4D22874E5600FB8D99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -860,6 +875,7 @@
 		EFC27F91246D7E9C0093D8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -889,6 +905,7 @@
 		EFC27F92246D7E9C0093D8B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
